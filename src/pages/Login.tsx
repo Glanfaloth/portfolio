@@ -26,9 +26,10 @@ class Login extends Component<LoginProps, {}> {
       <div
         className="w-full h-full login text-center"
         style={{
-          background: `url(${
-            this.props.dark ? wallpapers.night : wallpapers.day
-          }) center/cover no-repeat`
+          background: `url(
+            ${
+              this.props.dark ? wallpapers.night : wallpapers.day
+            }) center/cover no-repeat`
         }}
         onClick={() => this.props.setLogin(true)}
       >

@@ -1,4 +1,4 @@
-import FaceTime from "../components/apps/FaceTime";
+// import FaceTime from "../components/apps/FaceTime";
 import Terminal from "../components/apps/Terminal";
 import Safari from "../components/apps/Safari";
 import Bear from "../components/apps/Bear";
@@ -13,16 +13,16 @@ const apps: AppsData[] = [
     desktop: false,
     img: "img/icons/launchpad.png"
   },
-  {
-    id: "bear",
-    title: "Bear",
-    desktop: true,
-    show: true,
-    width: 860,
-    height: 500,
-    img: "img/icons/bear.png",
-    content: <Bear />
-  },
+  // {
+  //   id: "bear",
+  //   title: "Bear",
+  //   desktop: true,
+  //   show: true,
+  //   width: 860,
+  //   height: 500,
+  //   img: "img/icons/bear.png",
+  //   content: <Bear />
+  // },
   {
     id: "safari",
     title: "Safari",
@@ -42,15 +42,15 @@ const apps: AppsData[] = [
     img: "img/icons/vscode.png",
     content: <VSCode />
   },
-  {
-    id: "facetime",
-    title: "FaceTime",
-    desktop: true,
-    show: false,
-    img: "img/icons/facetime.png",
-    height: 530,
-    content: <FaceTime />
-  },
+  // {
+  //   id: "facetime",
+  //   title: "FaceTime",
+  //   desktop: true,
+  //   show: false,
+  //   img: "img/icons/facetime.png",
+  //   height: 530,
+  //   content: <FaceTime />
+  // },
   {
     id: "terminal",
     title: "Terminal",
@@ -64,14 +64,14 @@ const apps: AppsData[] = [
     title: "Mail",
     desktop: false,
     img: "img/icons/mail.png",
-    link: "mailto:renovamenzxh@gmail.com"
+    link: "mailto:gcevnas@gmail.com"
   },
   {
     id: "github",
     title: "Github",
     desktop: false,
     img: "img/icons/github.png",
-    link: "https://github.com/Renovamen/playground-macos"
+    link: "https://github.com/Glanfaloth"
   }
 ];
 

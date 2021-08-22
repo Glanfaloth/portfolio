@@ -13,14 +13,14 @@ const terminal: TerminalData[] = [
         content: (
           <div className="py-1">
             <div>
-              Hi! This is Xiaohan Zou, now an incoming Computer Science master's
-              student at Boston University and an algorithm engineer intern at
-              Kuaishou (Kwai). I'm also working as a research assistant at
-              Peking University.
+              Hi! This is Lanlan, now a master's student at ETH Zurich and a
+              robotics engineer intern at Voliro. I'm also working as a web
+              interface programming research assistant at Law, Economics, and
+              Business Group at ETH.
             </div>
             <div className="mt-1">
-              Before that, I got my bachelor's degree in Software Engineering at
-              Tongji University.
+              Before that, I got my bachelor's degree in Automotive Engineering
+              at Tsinghua University in China.
             </div>
           </div>
         )
@@ -30,14 +30,7 @@ const terminal: TerminalData[] = [
         title: "interests.txt",
         type: "file",
         content:
-          "Machine Learning / Deep Learning / Continual Learning / Meta-Learning / Multi-modal Retrieval"
-      },
-      {
-        id: "about-who-cares",
-        title: "who-cares.txt",
-        type: "file",
-        content:
-          "I'm open to summer research opportunities for summer 2022 lol."
+          "Web Development, Mobile Development, UI/UX Design, Computer Vision, Machine Learning"
       },
       {
         id: "about-contact",
@@ -49,90 +42,39 @@ const terminal: TerminalData[] = [
               Email:{" "}
               <a
                 className="text-blue-300"
-                href="mailto:renovamenzxh@gmail.com"
+                href="mailto:gcevnas@gmail.com"
                 target="_blank"
                 rel="noreferrer"
               >
-                renovamenzxh@gmail.com
-              </a>{" "}
-              /{" "}
-              <a
-                className="text-blue-300"
-                href="mailto:xiaohan.zou@foxmail.com"
-                target="_blank"
-                rel="noreferrer"
-              >
-                xiaohan.zou@foxmail.com
+                gcevnas@gmail.com
               </a>
             </li>
             <li>
               Github:{" "}
               <a
                 className="text-blue-300"
-                href="https://github.com/Renovamen"
+                href="https://github.com/Glanfloth"
                 target="_blank"
                 rel="noreferrer"
               >
-                https://github.com/Renovamen
+                https://github.com/Glanfloth
               </a>
             </li>
             <li>
               Linkedin:{" "}
               <a
                 className="text-blue-300"
-                href="https://www.linkedin.com/in/xiaohan-zou"
+                href="https://www.linkedin.com/in/yelan-tao/"
                 target="_blank"
                 rel="noreferrer"
               >
-                https://www.linkedin.com/in/xiaohan-zou
-              </a>
-            </li>
-            <li>
-              Blog:{" "}
-              <a
-                className="text-blue-300"
-                href="https://zxh.io"
-                target="_blank"
-                rel="noreferrer"
-              >
-                https://zxh.io
-              </a>
-            </li>
-            <li>
-              知乎:{" "}
-              <a
-                className="text-blue-300"
-                href="https://www.zhihu.com/people/chao-neng-gui-su"
-                target="_blank"
-                rel="noreferrer"
-              >
-                https://www.zhihu.com/people/chao-neng-gui-su
+                https://www.linkedin.com/in/yelan-tao/
               </a>
             </li>
           </ul>
         )
       }
     ]
-  },
-  {
-    id: "about-dream",
-    title: "my-dream.cpp",
-    type: "file",
-    content: (
-      <div className="py-1">
-        <div>
-          <span className="text-yellow-400">while</span>(
-          <span className="text-blue-400">sleeping</span>) <span>{"{"}</span>
-        </div>
-        <div>
-          <span className="text-blue-400 ml-9">money</span>
-          <span className="text-yellow-400">++</span>;
-        </div>
-        <div>
-          <span>{"}"}</span>
-        </div>
-      </div>
-    )
   }
 ];
 
