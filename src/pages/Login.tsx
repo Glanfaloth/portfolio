@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { BsQuestionSquareFill } from "react-icons/bs";
-import { CgSleep } from "react-icons/cg";
-import { RiShutDownLine, RiRestartLine } from "react-icons/ri";
+// import { CgSleep } from "react-icons/cg";
+// import { RiShutDownLine, RiRestartLine } from "react-icons/ri";
+import { ImCancelCircle } from "react-icons/im";
 
 import { macActions } from "../types";
 import wallpapers from "../configs/wallpapers";
@@ -34,7 +35,7 @@ class Login extends Component<LoginProps, {}> {
         <div className="inline-block w-auto relative top-1/2 -mt-40">
           {/* Avatar */}
           <img
-            className="rounded-full w-24 h-24 my-0 mx-auto"
+            className="rounded-full w-36 h-36 my-0 mx-auto"
             src={user.avatar}
             alt="img"
           />
@@ -43,9 +44,9 @@ class Login extends Component<LoginProps, {}> {
           </div>
 
           {/* Password Input */}
-          <div className="nightwind-prevent mx-auto grid grid-cols-5 w-44 h-8 mt-4 rounded-md bg-gray-300 blur bg-opacity-50">
+          <div className="nightwind-prevent mx-auto grid grid-cols-5 w-44 h-8 mt-4 rounded-full bg-gray-300 blur bg-opacity-50">
             <input
-              className="nightwind-prevent text-sm col-start-1 col-span-4 outline-none focus:outline-none bg-transparent px-2 text-white"
+              className="nightwind-prevent text-sm col-start-1 col-span-4 outline-none focus:outline-none bg-transparent px-2 text-gray-200"
               type="password"
               placeholder="Enter Password"
               onClick={(e) => e.stopPropagation()}
@@ -64,6 +65,15 @@ class Login extends Component<LoginProps, {}> {
         {/* buttons */}
         <div className="nightwind-prevent-block text-sm fixed bottom-16 left-0 right-0 mx-auto flex flex-row space-x-4 w-max">
           <div
+            className="flex flex-col items-center text-white w-24"
+            onClick={(e) => this.props.sleepMac(e)}
+          >
+            <div className="h-10 w-10 bg-gray-700 rounded-full inline-flex justify-center items-center">
+              <ImCancelCircle size={40} />
+            </div>
+            <span>Cancel</span>
+          </div>
+          {/* <div
             className="flex flex-col items-center text-white w-24"
             onClick={(e) => this.props.sleepMac(e)}
           >
@@ -89,7 +99,7 @@ class Login extends Component<LoginProps, {}> {
               <RiShutDownLine size={36} />
             </div>
             <span>Shut Down</span>
-          </div>
+          </div> */}
         </div>
       </div>
     );
