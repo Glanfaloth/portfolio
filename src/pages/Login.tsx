@@ -74,33 +74,6 @@ class Login extends Component<LoginProps, {}> {
             </div>
             <span>Cancel</span>
           </div>
-          {/* <div
-            className="flex flex-col items-center text-white w-24"
-            onClick={(e) => this.props.sleepMac(e)}
-          >
-            <div className="h-10 w-10 bg-gray-700 rounded-full inline-flex justify-center items-center">
-              <CgSleep size={40} />
-            </div>
-            <span>Sleep</span>
-          </div>
-          <div
-            className="flex flex-col items-center text-white w-24"
-            onClick={(e) => this.props.restartMac(e)}
-          >
-            <div className="h-10 w-10 bg-gray-700 rounded-full inline-flex justify-center items-center">
-              <RiRestartLine size={36} />
-            </div>
-            <span>Restart</span>
-          </div>
-          <div
-            className="flex flex-col items-center text-white w-24"
-            onClick={(e) => this.props.shutMac(e)}
-          >
-            <div className="h-10 w-10 bg-gray-700 rounded-full inline-flex justify-center items-center">
-              <RiShutDownLine size={36} />
-            </div>
-            <span>Shut Down</span>
-          </div> */}
         </div>
       </div>
     );

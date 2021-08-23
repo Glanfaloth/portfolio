@@ -13,8 +13,7 @@ import music from "../../configs/music";
 // ------- import icons -------
 import { BsBatteryFull } from "react-icons/bs";
 import { BiSearch } from "react-icons/bi";
-import { FaWifi } from "react-icons/fa";
-import { RiSignalWifiLine } from "react-icons/ri";
+import { FiWifi, FiWifiOff } from "react-icons/fi";
 import { AiFillApple } from "react-icons/ai";
 
 interface TopBarItemProps {
@@ -207,7 +206,7 @@ class TopBar extends Component<TopBarProps, TopBarState> {
 
         <div className="flex flex-row justify-end items-center space-x-2">
           <TopBarItem hideOnMobile={true}>
-            <span className="text-xs mt-0.5 mr-1">100%</span>
+            {/* <span className="text-xs mt-0.5 mr-1">100%</span> */}
             <BsBatteryFull size={20} />
           </TopBarItem>
           <TopBarItem
@@ -215,11 +214,7 @@ class TopBar extends Component<TopBarProps, TopBarState> {
             onClick={this.toggleWifiMenu}
             ref={this.wifiBtnRef}
           >
-            {this.props.wifi ? (
-              <FaWifi size={17} />
-            ) : (
-              <RiSignalWifiLine size={17} />
-            )}
+            {this.props.wifi ? <FiWifi size={17} /> : <FiWifiOff size={17} />}
           </TopBarItem>
           <TopBarItem
             ref={this.spotlightBtnRef}

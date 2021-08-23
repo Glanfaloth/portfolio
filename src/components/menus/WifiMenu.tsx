@@ -2,6 +2,11 @@ import React, { Component, createRef } from "react";
 import { connect } from "react-redux";
 import "react-rangeslider/lib/index.css";
 import { toggleWIFI } from "../../redux/action";
+import { GoLink } from "react-icons/go";
+import { FaSignal } from "react-icons/fa";
+import { BsBatteryHalf, BsLockFill } from "react-icons/bs";
+import { FiWifi } from "react-icons/fi";
+import { IoIosArrowDropright } from "react-icons/io";
 
 interface WifiMenuRedux {
   wifi: boolean;
@@ -41,20 +46,204 @@ class WifiMenu extends Component<WifiMenuProps, {}> {
   render() {
     return (
       <div
-        className="fixed h-11 w-80 max-w-full top-8 right-0 sm:right-2 px-2 py-0.5 flex gap-2 bg-gray-200 bg-opacity-90 blur border border-gray-400 border-opacity-50 rounded-lg text-black shadow-2xl"
-        style={{ boxShadow: "0px 0px 5px 0px rgba(0, 0, 0, 0.3)" }}
+        className="fixed w-80 max-w-full top-8 right-0 sm:right-2 px-2 py-0.5 gap-2 bg-gray-200 bg-opacity-60 blur border border-gray-400 border-opacity-50 rounded-lg text-black shadow-2xl"
+        style={{
+          boxShadow: "0px 0px 5px 0px rgba(0, 0, 0, 0.3)",
+          padding: "10px"
+        }}
         ref={this.wifiRef}
       >
-        <div className="w-4/5 p-2.5 font-medium">Wi-Fi</div>
-        <div className="w-1/5 py-2 text-center">
-          <label className="switch-toggle">
-            <input
-              type="checkbox"
-              checked={this.props.wifi}
-              onChange={() => this.props.toggleWIFI(!this.props.wifi)}
+        <div className="flex">
+          <div className="w-4/5 font-medium">Wi-Fi</div>
+          <div className="w-1/5 text-center">
+            <label className="switch-toggle">
+              <input
+                type="checkbox"
+                checked={this.props.wifi}
+                onChange={() => this.props.toggleWIFI(!this.props.wifi)}
+              />
+              <span className="slider-toggle"></span>
+            </label>
+          </div>
+        </div>
+        <hr
+          style={{
+            color: "grey",
+            opacity: "0.5",
+            marginTop: "10px",
+            marginBottom: "10px"
+          }}
+        />
+        <div
+          className="w-4/5"
+          style={{ fontSize: "14px", color: "gray", marginBottom: "5px" }}
+        >
+          Personal Hotspot
+        </div>
+        <div
+          className="flex"
+          style={{
+            justifyContent: "space-between"
+          }}
+        >
+          <div
+            className="flex"
+            style={{
+              alignItems: "center"
+            }}
+          >
+            <div
+              className="h-6 w-6 bg-gray-300 rounded-full inline-flex justify-center items-center"
+              style={{ padding: "2px" }}
+            >
+              <GoLink size={20} />
+            </div>
+            <div style={{ fontSize: "14px", paddingLeft: "4px" }}>
+              Glanfaloth Cevnas' iPhone
+            </div>
+          </div>
+          <div
+            className="flex"
+            style={{
+              paddingLeft: "10px",
+              alignItems: "center"
+            }}
+          >
+            <FaSignal
+              style={{ marginRight: "3px", height: "10px", color: "gray" }}
             />
-            <span className="slider-toggle"></span>
-          </label>
+            <div
+              style={{ fontSize: "10px", color: "gray", marginRight: "3px" }}
+            >
+              4G
+            </div>
+            <BsBatteryHalf style={{ marginRight: "3px", color: "gray" }} />
+          </div>
+        </div>
+        <hr
+          style={{
+            color: "grey",
+            opacity: "0.5",
+            marginTop: "10px",
+            marginBottom: "10px"
+          }}
+        />
+        <div
+          className="w-4/5"
+          style={{ fontSize: "14px", color: "gray", marginBottom: "5px" }}
+        >
+          Preferred Networks
+        </div>
+        <div
+          className="flex"
+          style={{
+            justifyContent: "space-between"
+          }}
+        >
+          <div
+            className="flex"
+            style={{
+              alignItems: "center"
+            }}
+          >
+            <div
+              className="h-6 w-6 bg-gray-300 rounded-full inline-flex justify-center items-center"
+              style={{ padding: "2px" }}
+            >
+              <FiWifi size={20} />
+            </div>
+            <div style={{ fontSize: "14px", paddingLeft: "4px" }}>
+              eduroam-5
+            </div>
+          </div>
+          <div
+            className="flex"
+            style={{
+              paddingLeft: "10px",
+              alignItems: "center"
+            }}
+          >
+            <BsLockFill
+              style={{ marginRight: "3px", height: "10px", color: "gray" }}
+            />
+          </div>
+        </div>
+        <div
+          className="flex"
+          style={{
+            justifyContent: "space-between",
+            marginTop: "10px"
+          }}
+        >
+          <div
+            className="flex"
+            style={{
+              alignItems: "center"
+            }}
+          >
+            <div
+              className="h-6 w-6 bg-gray-300 rounded-full inline-flex justify-center items-center"
+              style={{ padding: "2px" }}
+            >
+              <FiWifi size={20} />
+            </div>
+            <div style={{ fontSize: "14px", paddingLeft: "4px" }}>eduroam</div>
+          </div>
+          <div
+            className="flex"
+            style={{
+              paddingLeft: "10px",
+              alignItems: "center"
+            }}
+          >
+            <BsLockFill
+              style={{ marginRight: "3px", height: "10px", color: "gray" }}
+            />
+          </div>
+        </div>
+        <hr
+          style={{
+            color: "grey",
+            opacity: "0.5",
+            marginTop: "10px",
+            marginBottom: "10px"
+          }}
+        />
+        <div
+          className="flex"
+          style={{
+            justifyContent: "space-between",
+            alignItems: "center"
+          }}
+        >
+          <div className="w-4/5" style={{ fontSize: "14px", color: "gray" }}>
+            Other Networks
+          </div>
+          <div
+            className="flex"
+            style={{
+              paddingLeft: "10px",
+              alignItems: "center"
+            }}
+          >
+            <IoIosArrowDropright
+              style={{ marginRight: "3px", height: "10px", color: "gray" }}
+            />
+          </div>
+        </div>
+        <hr
+          style={{
+            color: "grey",
+            opacity: "0.5",
+            marginTop: "10px",
+            marginBottom: "10px"
+          }}
+        />
+        <div
+          className="w-4/5"
+          style={{ fontSize: "14px", marginBottom: "5px" }}
+        >
+          Network Preferences...
         </div>
       </div>
     );
