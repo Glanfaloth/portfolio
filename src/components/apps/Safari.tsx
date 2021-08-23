@@ -6,6 +6,8 @@ import { FaShieldAlt } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { BsLayoutSidebar } from "react-icons/bs";
 import { IoShareOutline, IoCopyOutline } from "react-icons/io5";
+import { CgMathPlus } from "react-icons/cg";
+import { RiDownloadCloudLine } from "react-icons/ri";
 import { checkURL } from "../../utils/url";
 import { SiteSectionData, SiteData } from "../../types";
 
@@ -109,7 +111,7 @@ class NavPage extends Component<NavProps> {
           })`
         }}
       >
-        <div className="w-full min-h-full pt-8 bg-gray-100 bg-opacity-80 blur">
+        <div className="w-full min-h-full pt-8 bg-gray-100 bg-opacity-70 blur">
           {/* Favorites */}
           <NavSection
             section={websites.favorites}
@@ -228,20 +230,20 @@ class Safari extends Component<SafariProps, SafariState> {
         <div className={`h-10 grid ${grid} flex items-center bg-white`}>
           <div className="flex flex-row px-2">
             <button
-              className={`w-7 h-6 border border-gray-300 ${buttonColor} outline-none focus:outline-none rounded flex justify-center items-center`}
+              className={`w-7 h-6 ${buttonColor} outline-none focus:outline-none rounded flex justify-center items-center`}
               onClick={() => this.setGoURL("")}
             >
               <FiChevronLeft size={20} />
             </button>
-            <button className="w-7 h-6 border border-gray-300 text-gray-400 outline-none focus:outline-none rounded flex justify-center items-center">
+            <button className="w-7 h-6 text-gray-400 outline-none focus:outline-none rounded flex justify-center items-center">
               <FiChevronRight size={20} />
             </button>
-            <button className="w-9 h-6 ml-3 border border-gray-300 text-gray-700 outline-none focus:outline-none rounded flex justify-center items-center">
+            <button className="w-9 h-6 ml-3 text-gray-700 outline-none focus:outline-none rounded flex justify-center items-center">
               <BsLayoutSidebar size={14} />
             </button>
           </div>
           <div className="flex flex-row justify-center px-2">
-            <button className="w-9 h-6 mr-2 -ml-10 border border-gray-300 text-gray-400 outline-none focus:outline-none rounded flex justify-center items-center">
+            <button className="w-9 h-6 mr-2 -ml-10 text-gray-400 outline-none focus:outline-none rounded flex justify-center items-center">
               <FaShieldAlt size={14} />
             </button>
             <input
@@ -254,12 +256,18 @@ class Safari extends Component<SafariProps, SafariState> {
             />
           </div>
           <div className={`flex flex-row justify-end px-2 ${hideLast}`}>
+            <button className="w-6 h-6 ml-2 text-gray-700 outline-none focus:outline-none rounded flex justify-center items-center">
+              <RiDownloadCloudLine size={16} />
+            </button>
             <button
-              className={`w-9 h-6 border border-gray-300 ${buttonColor} outline-none focus:outline-none rounded flex justify-center items-center`}
+              className={`w-6 h-6 ml-2 ${buttonColor} outline-none focus:outline-none rounded flex justify-center items-center`}
             >
               <IoShareOutline size={16} />
             </button>
-            <button className="w-9 h-6 ml-2 border border-gray-300 text-gray-700 outline-none focus:outline-none rounded flex justify-center items-center">
+            <button className="w-6 h-6 ml-2 text-gray-700 outline-none focus:outline-none rounded flex justify-center items-center">
+              <CgMathPlus size={16} />
+            </button>
+            <button className="w-6 h-6 ml-2 text-gray-700 outline-none focus:outline-none rounded flex justify-center items-center">
               <IoCopyOutline size={16} />
             </button>
           </div>
