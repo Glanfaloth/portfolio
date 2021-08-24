@@ -1,14 +1,12 @@
 # playground-macos
 
-My portfolio website simulating macOS's GUI: https://portfolio.zxh.io
+This project is developed based on the amazing portfolio website of Xiaohan Zou: https://portfolio.zxh.io
 
 Powered by [React](https://reactjs.org/) + [React Redux](https://react-redux.js.org/) + [Tailwind CSS](https://tailwindcss.com/) + [TypeScript](https://www.typescriptlang.org/).
 
-![day](./public/screenshots/day.png)
-![night](./public/screenshots/night.png)
+## What's new?
 
-
-&nbsp;
+- WiFi menu
 
 ## Usage
 
@@ -22,11 +20,9 @@ yarn dev
 yarn build
 ```
 
-
-&nbsp;
-
 ## Credits
 
+- [https://github.com/Renovamen/playground-macos](https://github.com/Renovamen/playground-macos)
 - [macOS Big Sur](https://www.apple.com/in/macos/big-sur/)
 - [macOS Catalina](https://www.apple.com/bw/macos/catalina/)
 - [macOS Icon Gallery](https://www.macosicongallery.com/)
