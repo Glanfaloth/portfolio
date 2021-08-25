@@ -46,10 +46,10 @@ class WifiMenu extends Component<WifiMenuProps, {}> {
   render() {
     return (
       <div
-        className="fixed w-70 max-w-full top-8 right-0 sm:right-2 py-0.5 gap-2 bg-gray-100 bg-opacity-80 blur border border-gray-400 border-opacity-50 rounded-lg text-black shadow-2xl"
+        className="fixed w-80 max-w-full top-8 right-0 sm:right-2 py-0.5 gap-2 bg-gray-200 bg-opacity-80 blur border border-gray-400 border-opacity-50 rounded-lg text-black shadow-2xl"
         style={{
           boxShadow: "0px 0px 5px 0px rgba(0, 0, 0, 0.3)",
-          padding: "10px 5px 10px 5px"
+          padding: "10px 5px 5px 5px"
         }}
         ref={this.wifiRef}
       >
@@ -98,7 +98,7 @@ class WifiMenu extends Component<WifiMenuProps, {}> {
             }}
           >
             <div
-              className="h-6 w-6 bg-gray-200 rounded-full inline-flex justify-center items-center"
+              className="h-6 w-6 bg-gray-400 rounded-full inline-flex justify-center items-center"
               style={{ padding: "2px" }}
             >
               <GoLink size={20} />
@@ -157,8 +157,8 @@ class WifiMenu extends Component<WifiMenuProps, {}> {
             }}
           >
             <div
-              className="h-6 w-6 bg-gray-200 rounded-full inline-flex justify-center items-center"
-              style={{ padding: "2px" }}
+              className="h-6 w-6 bg-blue-500 rounded-full inline-flex justify-center items-center"
+              style={{ padding: "2px", color: "white" }}
             >
               <FiWifi size={20} />
             </div>
@@ -194,7 +194,7 @@ class WifiMenu extends Component<WifiMenuProps, {}> {
             }}
           >
             <div
-              className="h-6 w-6 bg-gray-200 rounded-full inline-flex justify-center items-center"
+              className="h-6 w-6 bg-gray-400 rounded-full inline-flex justify-center items-center"
               style={{ padding: "2px" }}
             >
               <FiWifi size={20} />

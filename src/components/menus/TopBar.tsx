@@ -5,6 +5,7 @@ import format from "date-fns/format";
 import { macActions } from "../../types";
 import AppleMenu from "./AppleMenu";
 import WifiMenu from "./WifiMenu";
+import BlueToothMenu from "./BlueToothMenu";
 import ControlCenterMenu from "./ControlCenterMenu";
 import { isFullScreen } from "../../utils/screen";
 import { setVolume, setBrightness, toggleFullScreen } from "../../redux/action";
@@ -15,6 +16,7 @@ import { BsBatteryFull } from "react-icons/bs";
 import { BiSearch } from "react-icons/bi";
 import { FiWifi, FiWifiOff } from "react-icons/fi";
 import { AiFillApple } from "react-icons/ai";
+import { MdBluetooth, MdBluetoothDisabled } from "react-icons/md";
 
 interface TopBarItemProps {
   hideOnMobile?: boolean;
@@ -43,6 +45,7 @@ interface TopBarRedux {
   volume: number;
   brightness: number;
   wifi: boolean;
+  bluetooth: boolean;
 }
 
 interface TopBarProps extends macActions, TopBarRedux {
@@ -59,6 +62,7 @@ interface TopBarState {
   date: Date;
   showControlCenter: boolean;
   showWifiMenu: boolean;
+  showBlueToothMenu: boolean;
   showAppleMenu: boolean;
   playing: boolean;
 }
@@ -68,6 +72,7 @@ class TopBar extends Component<TopBarProps, TopBarState> {
   private appleBtnRef = createRef<any>();
   private controlCenterBtnRef = createRef<any>();
   private wifiBtnRef = createRef<any>();
+  private blueToothBtnRef = createRef<any>();
   private spotlightBtnRef = createRef<any>();
   private audio = new Audio();
 
@@ -77,6 +82,7 @@ class TopBar extends Component<TopBarProps, TopBarState> {
       date: new Date(),
       showControlCenter: false,
       showWifiMenu: false,
+      showBlueToothMenu: false,
       showAppleMenu: false,
       playing: false
     };
@@ -152,6 +158,12 @@ class TopBar extends Component<TopBarProps, TopBarState> {
     });
   };
 
+  toggleBlueToothMenu = (): void => {
+    this.setState({
+      showBlueToothMenu: !this.state.showBlueToothMenu
+    });
+  };
+
   logout = (): void => {
     this.toggleAudio(false);
     this.props.setLogin(false);
@@ -211,6 +223,17 @@ class TopBar extends Component<TopBarProps, TopBarState> {
           </TopBarItem>
           <TopBarItem
             hideOnMobile={true}
+            onClick={this.toggleBlueToothMenu}
+            ref={this.blueToothBtnRef}
+          >
+            {this.props.bluetooth ? (
+              <MdBluetooth size={17} />
+            ) : (
+              <MdBluetoothDisabled size={17} />
+            )}
+          </TopBarItem>
+          <TopBarItem
+            hideOnMobile={true}
             onClick={this.toggleWifiMenu}
             ref={this.wifiBtnRef}
           >
@@ -232,6 +255,14 @@ class TopBar extends Component<TopBarProps, TopBarState> {
               alt="control center"
             />
           </TopBarItem>
+
+          {/* Open this when clicking on bluetooth button */}
+          {this.state.showBlueToothMenu && (
+            <BlueToothMenu
+              toggleBlueToothMenu={this.toggleBlueToothMenu}
+              btnRef={this.blueToothBtnRef}
+            />
+          )}
 
           {/* Open this when clicking on Wifi button */}
           {this.state.showWifiMenu && (
@@ -265,7 +296,8 @@ const mapStateToProps = (state: TopBarRedux): TopBarRedux => {
   return {
     volume: state.volume,
     brightness: state.brightness,
-    wifi: state.wifi
+    wifi: state.wifi,
+    bluetooth: state.bluetooth
   };
 };
 

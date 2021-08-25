@@ -50,7 +50,7 @@ export const toggleWIFI = (wifi: boolean) => {
   };
 };
 
-export const toggleBleutooth = (bluetooth: boolean) => {
+export const toggleBlueTooth = (bluetooth: boolean) => {
   return {
     type: type.TOGGLE_BLUETOOTH,
     bluetooth

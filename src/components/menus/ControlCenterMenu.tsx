@@ -6,7 +6,7 @@ import {
   toggleDark,
   toggleWIFI,
   toggleAirdrop,
-  toggleBleutooth,
+  toggleBlueTooth,
   toggleFullScreen
 } from "../../redux/action";
 import music from "../../configs/music";
@@ -63,7 +63,7 @@ interface CCMProps extends CCMRedux {
   toggleDark: Function;
   toggleWIFI: Function;
   toggleAirdrop: Function;
-  toggleBleutooth: Function;
+  toggleBlueTooth: Function;
   toggleFullScreen: Function;
   setBrightness: (value: number) => void;
   setVolume: (value: number) => void;
@@ -117,7 +117,7 @@ class ControlCenterMenu extends Component<CCMProps, {}> {
             <div className="flex flex-col pt-0.5">
               <span className="font-medium leading-4">Wi-Fi</span>
               <span className="text-xs text-gray-500">
-                {this.props.wifi ? "Home" : "Off"}
+                {this.props.wifi ? "eduroam-5" : "Off"}
               </span>
             </div>
           </div>
@@ -129,7 +129,7 @@ class ControlCenterMenu extends Component<CCMProps, {}> {
                   ? "bg-blue-500 text-white"
                   : "bg-gray-400 bg-opacity-25 text-gray-700"
               } rounded-full p-2`}
-              onClick={() => this.props.toggleBleutooth(!this.props.bluetooth)}
+              onClick={() => this.props.toggleBlueTooth(!this.props.bluetooth)}
             />
             <div className="flex flex-col pt-0.5">
               <span className="font-medium leading-4">Bluetooth</span>
@@ -250,6 +250,6 @@ export default connect(mapStateToProps, {
   toggleDark,
   toggleWIFI,
   toggleAirdrop,
-  toggleBleutooth,
+  toggleBlueTooth,
   toggleFullScreen
 })(ControlCenterMenu);

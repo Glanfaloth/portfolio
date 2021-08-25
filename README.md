@@ -7,6 +7,7 @@ Powered by [React](https://reactjs.org/) + [React Redux](https://react-redux.js.
 ## What's new?
 
 - WiFi menu
+- Bluetooth menu
 
 ## Usage
 
