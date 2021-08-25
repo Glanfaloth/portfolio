@@ -86,98 +86,104 @@ class BlueToothMenu extends Component<BlueToothMenuProps, {}> {
             margin: "5px 10px 5px 10px"
           }}
         />
-        <div
-          className="w-4/5"
-          style={{
-            fontSize: "14px",
-            color: "gray",
-            margin: "0px 0px 5px 10px"
-          }}
-        >
-          Devices
-        </div>
-        <div
-          className="flex hover:bg-gray-300"
-          style={{
-            justifyContent: "space-between",
-            padding: "2px 10px 2px 10px",
-            borderRadius: "4px"
-          }}
-        >
-          <div
-            className="flex"
-            style={{
-              alignItems: "center"
-            }}
-          >
+        {this.props.bluetooth && (
+          <div>
             <div
-              className="h-6 w-6 bg-blue-400 rounded-full inline-flex justify-center items-center"
-              style={{ padding: "2px", color: "white" }}
+              className="w-4/5"
+              style={{
+                fontSize: "14px",
+                color: "gray",
+                margin: "0px 0px 5px 10px"
+              }}
             >
-              <AirpodsIcon />
+              Devices
             </div>
-            <div style={{ fontSize: "14px", paddingLeft: "4px" }}>
-              Glanfaloth' AirPods
-            </div>
-          </div>
-        </div>
-        <div
-          className="flex hover:bg-gray-300"
-          style={{
-            justifyContent: "space-between",
-            padding: "2px 10px 2px 10px",
-            borderRadius: "4px",
-            marginTop: "5px"
-          }}
-        >
-          <div
-            className="flex"
-            style={{
-              alignItems: "center"
-            }}
-          >
             <div
-              className="h-6 w-6 bg-gray-400 rounded-full inline-flex justify-center items-center"
-              style={{ padding: "4px" }}
+              className="flex hover:bg-gray-300"
+              style={{
+                justifyContent: "space-between",
+                padding: "2px 10px 2px 10px",
+                borderRadius: "4px"
+              }}
             >
-              <FaHeadphonesAlt size={20} />
+              <div
+                className="flex"
+                style={{
+                  alignItems: "center"
+                }}
+              >
+                <div
+                  className="h-6 w-6 bg-blue-400 rounded-full inline-flex justify-center items-center"
+                  style={{ padding: "2px", color: "white" }}
+                >
+                  <AirpodsIcon />
+                </div>
+                <div style={{ fontSize: "14px", paddingLeft: "4px" }}>
+                  Glanfaloth' AirPods
+                </div>
+              </div>
             </div>
-            <div style={{ fontSize: "14px", paddingLeft: "4px" }}>
-              Earmuffs
-            </div>
-          </div>
-        </div>
-        <div
-          className="flex hover:bg-gray-300"
-          style={{
-            justifyContent: "space-between",
-            padding: "2px 10px 2px 10px",
-            borderRadius: "4px",
-            marginTop: "5px"
-          }}
-        >
-          <div
-            className="flex"
-            style={{
-              alignItems: "center"
-            }}
-          >
             <div
-              className="h-6 w-6 bg-gray-400 rounded-full inline-flex justify-center items-center"
-              style={{ padding: "4px" }}
+              className="flex hover:bg-gray-300"
+              style={{
+                justifyContent: "space-between",
+                padding: "2px 10px 2px 10px",
+                borderRadius: "4px",
+                marginTop: "5px"
+              }}
             >
-              <FaHeadphonesAlt size={20} />
+              <div
+                className="flex"
+                style={{
+                  alignItems: "center"
+                }}
+              >
+                <div
+                  className="h-6 w-6 bg-gray-400 rounded-full inline-flex justify-center items-center"
+                  style={{ padding: "4px" }}
+                >
+                  <FaHeadphonesAlt size={20} />
+                </div>
+                <div style={{ fontSize: "14px", paddingLeft: "4px" }}>
+                  Earmuffs
+                </div>
+              </div>
             </div>
-            <div style={{ fontSize: "14px", paddingLeft: "4px" }}>WH-1000XM4</div>
+            <div
+              className="flex hover:bg-gray-300"
+              style={{
+                justifyContent: "space-between",
+                padding: "2px 10px 2px 10px",
+                borderRadius: "4px",
+                marginTop: "5px"
+              }}
+            >
+              <div
+                className="flex"
+                style={{
+                  alignItems: "center"
+                }}
+              >
+                <div
+                  className="h-6 w-6 bg-gray-400 rounded-full inline-flex justify-center items-center"
+                  style={{ padding: "4px" }}
+                >
+                  <FaHeadphonesAlt size={20} />
+                </div>
+                <div style={{ fontSize: "14px", paddingLeft: "4px" }}>
+                  WH-1000XM4
+                </div>
+              </div>
+            </div>
+            <hr
+              style={{
+                color: "grey",
+                opacity: "0.5",
+                margin: "5px 10px 5px 10px"
+              }}
+            />
           </div>
-        </div>
-        <hr
-          style={{
-            color: "grey",
-            opacity: "0.5",
-            margin: "5px 10px 5px 10px"
-          }}
-        />
+        )}
         <div
           className="flex hover:bg-gray-300"
           style={{
