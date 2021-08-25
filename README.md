@@ -1,6 +1,6 @@
 # playground-macos
 
-This project is developed based on the amazing portfolio website of Xiaohan Zou: https://portfolio.zxh.io
+This project is developed based on the amazing [portfolio website](https://portfolio.zxh.io) of [Xiaohan Zou](https://github.com/Renovamen).
 
 Powered by [React](https://reactjs.org/) + [React Redux](https://react-redux.js.org/) + [Tailwind CSS](https://tailwindcss.com/) + [TypeScript](https://www.typescriptlang.org/).
 
