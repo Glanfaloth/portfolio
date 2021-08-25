@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { BsQuestionSquareFill } from "react-icons/bs";
-// import { CgSleep } from "react-icons/cg";
-// import { RiShutDownLine, RiRestartLine } from "react-icons/ri";
 import { ImCancelCircle } from "react-icons/im";
 
 import { macActions } from "../types";
@@ -53,9 +50,6 @@ class Login extends Component<LoginProps, {}> {
               onClick={(e) => e.stopPropagation()}
               onKeyPress={this.keyPress}
             />
-            <div className="col-start-5 col-span-1 flex justify-center items-center">
-              <BsQuestionSquareFill className="ml-1" color="white" />
-            </div>
           </div>
 
           <div className="nightwind-prevent text-sm mt-2 text-gray-200">
