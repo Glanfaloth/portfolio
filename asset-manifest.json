@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/playground-macos/static/css/main.c6e22be2.chunk.css",
-    "main.js": "/playground-macos/static/js/main.4d869197.chunk.js",
-    "main.js.map": "/playground-macos/static/js/main.4d869197.chunk.js.map",
+    "main.css": "/playground-macos/static/css/main.60bf6bcc.chunk.css",
+    "main.js": "/playground-macos/static/js/main.c11d36c0.chunk.js",
+    "main.js.map": "/playground-macos/static/js/main.c11d36c0.chunk.js.map",
     "runtime-main.js": "/playground-macos/static/js/runtime-main.33b5987a.js",
     "runtime-main.js.map": "/playground-macos/static/js/runtime-main.33b5987a.js.map",
     "static/css/2.76a0d443.chunk.css": "/playground-macos/static/css/2.76a0d443.chunk.css",
-    "static/js/2.5f4f4703.chunk.js": "/playground-macos/static/js/2.5f4f4703.chunk.js",
-    "static/js/2.5f4f4703.chunk.js.map": "/playground-macos/static/js/2.5f4f4703.chunk.js.map",
+    "static/js/2.5ca1ec5e.chunk.js": "/playground-macos/static/js/2.5ca1ec5e.chunk.js",
+    "static/js/2.5ca1ec5e.chunk.js.map": "/playground-macos/static/js/2.5ca1ec5e.chunk.js.map",
     "index.html": "/playground-macos/index.html",
     "static/css/2.76a0d443.chunk.css.map": "/playground-macos/static/css/2.76a0d443.chunk.css.map",
-    "static/css/main.c6e22be2.chunk.css.map": "/playground-macos/static/css/main.c6e22be2.chunk.css.map",
-    "static/js/2.5f4f4703.chunk.js.LICENSE.txt": "/playground-macos/static/js/2.5f4f4703.chunk.js.LICENSE.txt",
+    "static/css/main.60bf6bcc.chunk.css.map": "/playground-macos/static/css/main.60bf6bcc.chunk.css.map",
+    "static/js/2.5ca1ec5e.chunk.js.LICENSE.txt": "/playground-macos/static/js/2.5ca1ec5e.chunk.js.LICENSE.txt",
     "static/media/index.css": "/playground-macos/static/media/AvenirNextLTPro-Regular.a6f907b6.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.33b5987a.js",
     "static/css/2.76a0d443.chunk.css",
-    "static/js/2.5f4f4703.chunk.js",
-    "static/css/main.c6e22be2.chunk.css",
-    "static/js/main.4d869197.chunk.js"
+    "static/js/2.5ca1ec5e.chunk.js",
+    "static/css/main.60bf6bcc.chunk.css",
+    "static/js/main.c11d36c0.chunk.js"
   ]
 }
