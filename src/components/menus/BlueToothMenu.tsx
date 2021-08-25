@@ -143,7 +143,7 @@ class BlueToothMenu extends Component<BlueToothMenuProps, {}> {
               <FaHeadphonesAlt size={20} />
             </div>
             <div style={{ fontSize: "14px", paddingLeft: "4px" }}>
-              eduroam-5
+              Earmuffs
             </div>
           </div>
         </div>
@@ -168,7 +168,7 @@ class BlueToothMenu extends Component<BlueToothMenuProps, {}> {
             >
               <FaHeadphonesAlt size={20} />
             </div>
-            <div style={{ fontSize: "14px", paddingLeft: "4px" }}>eduroam</div>
+            <div style={{ fontSize: "14px", paddingLeft: "4px" }}>WH-1000XM4</div>
           </div>
         </div>
         <hr
