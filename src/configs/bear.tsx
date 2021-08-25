@@ -43,7 +43,7 @@ const bear: BearData[] = [
       {
         id: "grimmetropolis",
         title: "Grimmetropolis",
-        file: "",
+        file: "markdown/grimmetropolis.md",
         icon: <Emoji label="crown" symbol="👑" />,
         excerpt: "Tower Defense game in the theme of Grimm's fairy tales",
         link: "https://gitlab.inf.ethz.ch/OU-GTC/gamelab2021-team3"

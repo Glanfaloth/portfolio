@@ -291,8 +291,12 @@ body:not(pre) {
   @apply bg-gray-900;
 }
 
+.bear .sidebar {
+  @apply bg-white text-black;
+}
+
 .dark .bear .sidebar {
-  @apply bg-gray-700 text-white p-3;
+  @apply bg-gray-700 text-white;
 }
 
 /*

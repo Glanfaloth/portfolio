@@ -11,6 +11,7 @@ import {
   AiOutlineSearch,
   AiOutlineClockCircle
 } from "react-icons/ai";
+import { GoTriangleRight } from "react-icons/go";
 
 function Emoji(props: any) {
   return (
@@ -88,22 +89,25 @@ const Highlighter = (dark: boolean): any => {
 class Sidebar extends Component<SidebarProps> {
   render() {
     return (
-      <div className="sidebar w-full h-full bg-gray-700 text-white overflow-y-scroll">
-        <div className="h-8 pl-3 flex flex-row justify-start items-center">
+      <div className="sidebar w-full h-full bg-white text-white overflow-y-scroll">
+        <div className="h-8 pl-3 pr-3 flex flex-row justify-start items-center">
           <Emoji label="peach" symbol="🍑" />
-          <p className="text-sm ml-2">Lanlan</p>
+          <p className="text-sm ml-1">Lanlan</p>
         </div>
-        <div className="pl-3 h-8 flex flex-row justify-start items-center">
-          <AiOutlineSearch className="text-gray-500 mr-3" />
+        <div className="pl-3 pr-3 h-8 flex flex-row justify-start items-center">
+          <AiOutlineSearch className="text-gray-500 mr-2" />
           <p className="text-gray-500 text-sm">Quick Find</p>
         </div>
-        <div className="pl-3 h-8 flex flex-row justify-start items-center">
-          <AiOutlineClockCircle className="text-gray-500 mr-3" />
+        <div className="pl-3 pr-3 h-8 flex flex-row justify-start items-center">
+          <AiOutlineClockCircle className="text-gray-500 mr-2" />
           <p className="text-gray-500 text-sm">All Updates</p>
         </div>
-        <div className="pl-3 h-8 flex flex-row justify-start items-center">
-          <AiOutlineSearch className="text-gray-500 mr-3" />
+        <div className="pl-3 pr-3 h-8 flex flex-row justify-start items-center">
+          <AiOutlineSearch className="text-gray-500 mr-2" />
           <p className="text-gray-500 text-sm">Settings &amp; Members</p>
+        </div>
+        <div className="pl-3 pr-3 h-8 flex flex-row justify-start items-center">
+          <p className="text-gray-400 text-xs">FAVORITES</p>
         </div>
         <ul>
           {bear.map((item, index) => (
@@ -114,8 +118,9 @@ class Sidebar extends Component<SidebarProps> {
               } ${this.props.cur === index ? "" : "hover:bg-gray-600"}`}
               onClick={() => this.props.setMidBar(item.md, index)}
             >
+              <GoTriangleRight className="text-gray-500 mr-2" />
               {item.icon}
-              <span className="ml-2 text-sm">{item.title}</span>
+              <span className="ml-1 text-sm">{item.title}</span>
             </li>
           ))}
         </ul>
