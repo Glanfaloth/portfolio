@@ -11,7 +11,3 @@ Contact me by:
 - Email: [gcevnas@gmail.com](mailto:gcevnas@gmail.com)
 - Github: [@Glanfaloth](https://github.com/Glanfaloth)
 - [LinkedIn](https://www.linkedin.com/in/yelan-tao)
-
-## Résumé
-
-My résumé can be found [here](https://glanfaloth.notion.site/Hey-I-m-Yelan-dc10c33bb10f4680943e7bb9505f0fc7).
