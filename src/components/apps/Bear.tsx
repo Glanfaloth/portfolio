@@ -6,9 +6,24 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 import bear from "../../configs/bear";
 import { BearMdData } from "../../types";
-import { IoCloudOfflineOutline } from "react-icons/io5";
-import { GiSettingsKnobs } from "react-icons/gi";
-import { AiOutlineLink } from "react-icons/ai";
+import {
+  AiOutlineLink,
+  AiOutlineSearch,
+  AiOutlineClockCircle
+} from "react-icons/ai";
+
+function Emoji(props: any) {
+  return (
+    <span
+      className="emoji"
+      role="img"
+      aria-label={props.label ? props.label : ""}
+      aria-hidden={props.label ? "false" : "true"}
+    >
+      {props.symbol}
+    </span>
+  );
+}
 
 interface BearRedux {
   dark?: boolean;
@@ -74,21 +89,33 @@ class Sidebar extends Component<SidebarProps> {
   render() {
     return (
       <div className="sidebar w-full h-full bg-gray-700 text-white overflow-y-scroll">
-        <div className="h-12 pr-3 flex flex-row justify-end items-center">
-          <IoCloudOfflineOutline className="mr-3" size={20} />
-          <GiSettingsKnobs size={20} />
+        <div className="h-8 pl-3 flex flex-row justify-start items-center">
+          <Emoji label="peach" symbol="🍑" />
+          <p className="text-sm ml-2">Lanlan</p>
+        </div>
+        <div className="pl-3 h-8 flex flex-row justify-start items-center">
+          <AiOutlineSearch className="text-gray-500 mr-3" />
+          <p className="text-gray-500 text-sm">Quick Find</p>
+        </div>
+        <div className="pl-3 h-8 flex flex-row justify-start items-center">
+          <AiOutlineClockCircle className="text-gray-500 mr-3" />
+          <p className="text-gray-500 text-sm">All Updates</p>
+        </div>
+        <div className="pl-3 h-8 flex flex-row justify-start items-center">
+          <AiOutlineSearch className="text-gray-500 mr-3" />
+          <p className="text-gray-500 text-sm">Settings &amp; Members</p>
         </div>
         <ul>
           {bear.map((item, index) => (
             <li
               key={`bear-sidebar-${item.id}`}
-              className={`pl-6 h-8 flex flex-row items-center cursor-default ${
+              className={`pl-3 h-8 flex flex-row items-center cursor-default ${
                 this.props.cur === index ? "bg-red-500" : "bg-transparent"
               } ${this.props.cur === index ? "" : "hover:bg-gray-600"}`}
               onClick={() => this.props.setMidBar(item.md, index)}
             >
               {item.icon}
-              <span className="ml-2">{item.title}</span>
+              <span className="ml-2 text-sm">{item.title}</span>
             </li>
           ))}
         </ul>
@@ -248,7 +275,7 @@ class Bear extends Component<BearRedux, BearState> {
   render() {
     return (
       <div className="bear font-avenir flex flex-row w-full h-full">
-        <div className="flex-none w-44">
+        <div className="flex-none">
           <Sidebar cur={this.state.curSidebar} setMidBar={this.setMidBar} />
         </div>
         <div className="flex-none w-60">

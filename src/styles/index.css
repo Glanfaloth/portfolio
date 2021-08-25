@@ -2,32 +2,37 @@
   font-family: "Avenir Next LT Pro";
   font-style: normal;
   font-weight: normal;
-  src: local("Avenir Next LT Pro Regular"), url("./fonts/AvenirNextLTPro-Regular.woff") format("woff");
+  src: local("Avenir Next LT Pro Regular"),
+    url("./fonts/AvenirNextLTPro-Regular.woff") format("woff");
 }
 
 @font-face {
   font-family: "Avenir Next LT Pro";
   font-style: italic;
   font-weight: normal;
-  src: local("Avenir Next LT Pro It"), url("./fonts/AvenirNextLTPro-Italic.woff") format("woff");
+  src: local("Avenir Next LT Pro It"),
+    url("./fonts/AvenirNextLTPro-Italic.woff") format("woff");
 }
 
 @font-face {
   font-family: "Avenir Next LT Pro";
   font-style: normal;
   font-weight: bold;
-  src: local("Avenir Next LT Pro Demi"), url("./fonts/AvenirNextLTPro-Demi.woff") format("woff");
+  src: local("Avenir Next LT Pro Demi"),
+    url("./fonts/AvenirNextLTPro-Demi.woff") format("woff");
 }
 
 @font-face {
   font-family: "Avenir Next LT Pro";
   font-style: italic;
   font-weight: bold;
-  src: local("Avenir Next LT Pro DemiIt"), url("./fonts/AvenirNextLTPro-DemiItalic.woff") format("woff");
+  src: local("Avenir Next LT Pro DemiIt"),
+    url("./fonts/AvenirNextLTPro-DemiItalic.woff") format("woff");
 }
 
 .font-avenir {
-  font-family: "Avenir Next LT Pro", "Helvetica Neue", SFCompactRounded, -apple-system, Roboto, Oxygen, Ubuntu, "Fira Sans", "Droid Sans", sans-serif;
+  font-family: "Avenir Next LT Pro", "Helvetica Neue", SFCompactRounded,
+    -apple-system, Roboto, Oxygen, Ubuntu, "Fira Sans", "Droid Sans", sans-serif;
 }
 
 .font-terminal {
@@ -38,12 +43,15 @@
   @apply m-0 p-0;
 }
 
-html, body, #root {
+html,
+body,
+#root {
   @apply h-full overflow-hidden;
 }
 
 body:not(pre) {
-  font-family: "Helvetica Neue", SFCompactRounded, -apple-system, Roboto, Oxygen, Ubuntu, "Fira Sans", "Droid Sans", sans-serif;
+  font-family: "Helvetica Neue", SFCompactRounded, -apple-system, Roboto, Oxygen,
+    Ubuntu, "Fira Sans", "Droid Sans", sans-serif;
 }
 
 .blur {
@@ -148,7 +156,8 @@ body:not(pre) {
 /* --------- bear markdown --------- */
 
 .bear .markdown a {
-  @apply text-red-500;
+  @apply text-gray-500;
+  @apply underline;
 }
 
 .bear .markdown h1,
@@ -176,24 +185,12 @@ body:not(pre) {
   @apply text-3xl;
 }
 
-.bear .markdown h1::before {
-  content: "H1";
-}
-
 .bear .markdown h2 {
   @apply text-2xl;
 }
 
-.bear .markdown h2::before {
-  content: "H2";
-}
-
 .bear .markdown h3 {
   @apply text-xl;
-}
-
-.bear .markdown h3::before {
-  content: "H3";
 }
 
 .bear .markdown h3 {
@@ -202,10 +199,6 @@ body:not(pre) {
 
 .bear .markdown h4 {
   @apply text-lg;
-}
-
-.bear .markdown h4::before {
-  content: "H4";
 }
 
 .bear .markdown p {
@@ -228,7 +221,7 @@ body:not(pre) {
 }
 
 .bear .markdown ul > li::marker {
-  @apply text-red-500;
+  @apply text-gray-900;
 }
 
 .bear .markdown ol {
@@ -265,7 +258,7 @@ body:not(pre) {
 }
 
 .bear .markdown .token {
-	background: transparent !important;
+  background: transparent !important;
 }
 
 .bear .markdown img {
@@ -299,9 +292,8 @@ body:not(pre) {
 }
 
 .dark .bear .sidebar {
-  @apply bg-gray-700 text-white;
+  @apply bg-gray-700 text-white p-3;
 }
-
 
 /*
   Credits: W3 Schools: https://www.w3schools.com/howto/howto_css_switch.asp
@@ -334,11 +326,11 @@ body:not(pre) {
 }
 
 input:checked + .slider-toggle {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 input:focus + .slider-toggle {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider-toggle:before {
