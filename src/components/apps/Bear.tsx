@@ -11,7 +11,8 @@ import {
   AiOutlineSearch,
   AiOutlineClockCircle
 } from "react-icons/ai";
-import { GoTriangleRight } from "react-icons/go";
+import { GoTriangleRight, GoTriangleDown } from "react-icons/go";
+import { BsDot } from "react-icons/bs";
 
 function Emoji(props: any) {
   return (
@@ -58,6 +59,11 @@ interface MiddlebarProps {
 interface SidebarProps {
   cur: number;
   setMidBar: (items: BearMdData[], index: number) => void;
+  //
+  items: BearMdData[];
+  curr: number;
+  setContent: (id: string, url: string, index: number) => void;
+  //
 }
 
 const Highlighter = (dark: boolean): any => {
@@ -113,58 +119,61 @@ class Sidebar extends Component<SidebarProps> {
           {bear.map((item, index) => (
             <li
               key={`bear-sidebar-${item.id}`}
-              className={`pl-3 h-8 flex flex-row items-center cursor-default ${
-                this.props.cur === index ? "bg-red-500" : "bg-transparent"
-              } ${this.props.cur === index ? "" : "hover:bg-gray-600"}`}
-              onClick={() => this.props.setMidBar(item.md, index)}
+              className={`flex flex-col items-left cursor-default ${
+                this.props.cur === index ? "bg-gray-400" : "bg-transparent"
+              } ${this.props.cur === index ? "" : "hover:bg-gray-200"}`}
             >
-              <GoTriangleRight className="text-gray-500 mr-2" />
-              {item.icon}
-              <span className="ml-1 text-sm">{item.title}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
-  }
-}
-
-class Middlebar extends Component<MiddlebarProps> {
-  render() {
-    return (
-      <div className="midbar w-full h-full bg-gray-50 border-r border-gray-300 overflow-y-scroll">
-        <ul>
-          {this.props.items.map((item: BearMdData, index: number) => (
-            <li
-              key={`bear-midbar-${item.id}`}
-              className={`h-24 flex flex-col cursor-default border-l-2 ${
-                this.props.cur === index
-                  ? "border-red-500 bg-white"
-                  : "border-transparent bg-transparent"
-              } hover:bg-white`}
-              onClick={() => this.props.setContent(item.id, item.file, index)}
-            >
-              <div className="h-8 mt-3 flex flex-row flex-none items-center">
-                <div className="-mt-1 w-10 text-gray-500 flex flex-none justify-center">
-                  {item.icon}
+              <div
+                className="pl-3 flex flex-row items-center"
+                onClick={() => this.props.setMidBar(item.md, index)}
+              >
+                {this.props.cur === index ? (
+                  <GoTriangleDown className="text-gray-500 mr-2" />
+                ) : (
+                  <GoTriangleRight className="text-gray-500 mr-2" />
+                )}
+                {item.icon}
+                <span className="ml-2 text-sm">{item.title}</span>
+              </div>
+              {this.props.cur === index && (
+                <div className="midbar w-full h-full bg-gray-50">
+                  <ul>
+                    {this.props.items.map((item: BearMdData, index: number) => (
+                      <li
+                        key={`bear-midbar-${item.id}`}
+                        className={`h-8 flex flex-col cursor-default ${
+                          this.props.curr === index
+                            ? "bg-gray-300"
+                            : "bg-transparent"
+                        } ${
+                          this.props.curr === index ? "" : "hover:bg-gray-200"
+                        }`}
+                        onClick={() =>
+                          this.props.setContent(item.id, item.file, index)
+                        }
+                      >
+                        <div className="mt-1 flex flex-row flex-none items-center">
+                          <BsDot className="ml-5 mr-2 text-gray-500" />
+                          {item.icon}
+                          <span className="ml-2 relative text-gray-900 flex-grow text-sm">
+                            {item.title}
+                            {item.link && (
+                              <a
+                                className="absolute top-1 right-4"
+                                href={item.link}
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                <AiOutlineLink className="text-gray-500" />
+                              </a>
+                            )}
+                          </span>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <span className="relative text-gray-900 flex-grow font-bold">
-                  {item.title}
-                  {item.link && (
-                    <a
-                      className="absolute top-1 right-4"
-                      href={item.link}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <AiOutlineLink className="text-gray-500" />
-                    </a>
-                  )}
-                </span>
-              </div>
-              <div className="h-16 ml-10 pb-2 pr-1 border-b border-gray-300 text-sm text-gray-500">
-                {item.excerpt}
-              </div>
+              )}
             </li>
           ))}
         </ul>
@@ -281,12 +290,11 @@ class Bear extends Component<BearRedux, BearState> {
     return (
       <div className="bear font-avenir flex flex-row w-full h-full">
         <div className="flex-none">
-          <Sidebar cur={this.state.curSidebar} setMidBar={this.setMidBar} />
-        </div>
-        <div className="flex-none w-60">
-          <Middlebar
+          <Sidebar
+            cur={this.state.curSidebar}
+            setMidBar={this.setMidBar}
             items={this.state.midbarList}
-            cur={this.state.curMidbar}
+            curr={this.state.curMidbar}
             setContent={this.setContent}
           />
         </div>

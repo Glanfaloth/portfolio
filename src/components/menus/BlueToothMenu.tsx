@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import "react-rangeslider/lib/index.css";
 import { toggleBlueTooth } from "../../redux/action";
 import { FaHeadphonesAlt } from "react-icons/fa";
-import { IoIosArrowDropright } from "react-icons/io";
 
 // icon:airpods | Teeny Icons https://teenyicons.com/ | Anja van Staden
 function AirpodsIcon(

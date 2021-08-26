@@ -70,6 +70,3 @@ const bear: BearData[] = [
 ];
 
 export default bear;
-function props(props: any) {
-  throw new Error("Function not implemented.");
-}
