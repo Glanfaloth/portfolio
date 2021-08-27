@@ -28,8 +28,8 @@ const apps: AppsData[] = [
     title: "Notion",
     desktop: true,
     show: true,
-    width: 860,
-    height: 500,
+    width: 1000,
+    height: 600,
     img: "img/icons/notion.png",
     content: <Bear />
   },

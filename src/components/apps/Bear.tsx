@@ -50,20 +50,12 @@ interface ContentState {
   };
 }
 
-interface MiddlebarProps {
-  items: BearMdData[];
-  cur: number;
-  setContent: (id: string, url: string, index: number) => void;
-}
-
 interface SidebarProps {
-  cur: number;
+  cur: number; // current parent sidebar
   setMidBar: (items: BearMdData[], index: number) => void;
-  //
   items: BearMdData[];
-  curr: number;
+  curr: number; // current child midbar
   setContent: (id: string, url: string, index: number) => void;
-  //
 }
 
 const Highlighter = (dark: boolean): any => {
@@ -120,53 +112,53 @@ class Sidebar extends Component<SidebarProps> {
             <li
               key={`bear-sidebar-${item.id}`}
               className={`flex flex-col items-left cursor-default ${
-                this.props.cur === index ? "bg-gray-400" : "bg-transparent"
+                this.props.cur === index ? "bg-gray-500" : "bg-transparent"
               } ${this.props.cur === index ? "" : "hover:bg-gray-200"}`}
             >
               <div
-                className="pl-3 flex flex-row items-center"
+                className="h-8 pl-3 flex flex-row items-center"
                 onClick={() => this.props.setMidBar(item.md, index)}
               >
                 {this.props.cur === index ? (
-                  <GoTriangleDown className="text-gray-500 mr-2" />
+                  <GoTriangleDown className="text-gray-800 mr-2" />
                 ) : (
-                  <GoTriangleRight className="text-gray-500 mr-2" />
+                  <GoTriangleRight className="text-gray-800 mr-2" />
                 )}
                 {item.icon}
                 <span className="ml-2 text-sm">{item.title}</span>
               </div>
               {this.props.cur === index && (
-                <div className="midbar w-full h-full bg-gray-50">
+                <div className="midbar w-full h-full bg-gray-200">
                   <ul>
                     {this.props.items.map((item: BearMdData, index: number) => (
                       <li
                         key={`bear-midbar-${item.id}`}
                         className={`h-8 flex flex-col cursor-default ${
                           this.props.curr === index
-                            ? "bg-gray-300"
+                            ? "bg-gray-400"
                             : "bg-transparent"
                         } ${
-                          this.props.curr === index ? "" : "hover:bg-gray-200"
+                          this.props.curr === index ? "" : "hover:bg-gray-300"
                         }`}
                         onClick={() =>
                           this.props.setContent(item.id, item.file, index)
                         }
                       >
                         <div className="mt-1 flex flex-row flex-none items-center">
-                          <BsDot className="ml-5 mr-2 text-gray-500" />
+                          <BsDot className="ml-5 mr-2 text-gray-800" />
                           {item.icon}
                           <span className="ml-2 relative text-gray-900 flex-grow text-sm">
                             {item.title}
-                            {item.link && (
+                            {/* {item.link && (
                               <a
-                                className="absolute top-1 right-4"
+                                // className="absolute top-1 right-4"
                                 href={item.link}
                                 target="_blank"
                                 rel="noreferrer"
                               >
                                 <AiOutlineLink className="text-gray-500" />
                               </a>
-                            )}
+                            )} */}
                           </span>
                         </div>
                       </li>
