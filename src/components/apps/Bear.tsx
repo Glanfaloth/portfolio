@@ -9,7 +9,8 @@ import { BearMdData } from "../../types";
 import {
   AiOutlineLink,
   AiOutlineSearch,
-  AiOutlineClockCircle
+  AiOutlineClockCircle,
+  AiOutlineDoubleLeft
 } from "react-icons/ai";
 import { GoTriangleRight, GoTriangleDown } from "react-icons/go";
 import { BsDot } from "react-icons/bs";
@@ -88,6 +89,9 @@ class Sidebar extends Component<SidebarProps> {
   render() {
     return (
       <div className="sidebar w-full h-full bg-white text-white overflow-y-scroll">
+        <div className="flex justify-end">
+          <AiOutlineDoubleLeft className="text-gray-500 m-2" size={20} />
+        </div>
         <div className="h-8 pl-3 pr-3 flex flex-row justify-start items-center">
           <Emoji label="peach" symbol="🍑" />
           <p className="text-sm ml-1">Lanlan</p>
@@ -144,22 +148,27 @@ class Sidebar extends Component<SidebarProps> {
                           this.props.setContent(item.id, item.file, index)
                         }
                       >
-                        <div className="mt-1 flex flex-row flex-none items-center">
-                          <BsDot className="ml-5 mr-2 text-gray-800" />
-                          {item.icon}
-                          <span className="ml-2 relative text-gray-900 flex-grow text-sm">
+                        <div className="flex flex-row items-center content-between">
+                          <div
+                            className="mt-1 mr-2 flex flex-row flex-none items-center"
+                            style={{ width: "200px" }}
+                          >
+                            <BsDot className="ml-5 mr-2 text-gray-800" />
+                            {item.icon}
                             {item.title}
-                            {/* {item.link && (
+                          </div>
+                          <div style={{ width: "10px" }}>
+                            {item.link && (
                               <a
-                                // className="absolute top-1 right-4"
+                                style={{ float: "right", paddingRight: "5px" }}
                                 href={item.link}
                                 target="_blank"
                                 rel="noreferrer"
                               >
                                 <AiOutlineLink className="text-gray-500" />
                               </a>
-                            )} */}
-                          </span>
+                            )}
+                          </div>
                         </div>
                       </li>
                     ))}
