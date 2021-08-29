@@ -23,8 +23,13 @@ export class MenuItem extends Component<MenuItemProps, {}> {
 
 export class MenuItemGroup extends Component<MenuItemGroupProps, {}> {
   render() {
-    const border =
-      this.props.border === false ? "" : "border-b-2 border-gray-400";
-    return <ul className={`py-1 ${border}`}>{this.props.children}</ul>;
+    return (
+      <ul className="py-1">
+        {this.props.children}
+        {this.props.border === true && (
+          <hr className="text-gray-500 opacity-50 my-1 mx-2.5" />
+        )}
+      </ul>
+    );
   }
 }
