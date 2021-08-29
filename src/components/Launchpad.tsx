@@ -61,7 +61,7 @@ class Launchpad extends Component<LaunchpadProps, LaunchpadState> {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="col-start-1 col-span-1 flex justify-center items-center">
-              <BiSearch className="ml-1" color="white" />
+              <BiSearch className="ml-1 text-white" />
             </div>
             <input
               className="col-start-2 col-span-10 outline-none focus:outline-none bg-transparent px-1 text-sm text-white"

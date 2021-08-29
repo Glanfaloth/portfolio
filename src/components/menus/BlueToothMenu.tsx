@@ -78,126 +78,41 @@ class BlueToothMenu extends Component<BlueToothMenuProps, {}> {
             </label>
           </div>
         </div>
-        <hr
-          style={{
-            color: "grey",
-            opacity: "0.5",
-            margin: "5px 10px 5px 10px"
-          }}
-        />
+        <hr className="text-gray-500 opacity-50 my-1 mx-2.5" />
         {this.props.bluetooth && (
           <div>
-            <div
-              className="w-4/5"
-              style={{
-                fontSize: "14px",
-                color: "gray",
-                margin: "0px 0px 5px 10px"
-              }}
-            >
+            <div className="w-4/5 text-sm text-gray-500 mb-1 ml-2.5">
               Devices
             </div>
-            <div
-              className="flex hover:bg-gray-300"
-              style={{
-                justifyContent: "space-between",
-                padding: "2px 10px 2px 10px",
-                borderRadius: "4px"
-              }}
-            >
-              <div
-                className="flex"
-                style={{
-                  alignItems: "center"
-                }}
-              >
-                <div
-                  className="h-6 w-6 bg-blue-400 rounded-full inline-flex justify-center items-center"
-                  style={{ padding: "2px", color: "white" }}
-                >
+            <div className="flex hover:bg-gray-300 rounded justify-between py-0.5 px-2.5 ">
+              <div className="flex items-center">
+                <div className="h-6 w-6 bg-blue-400 rounded-full inline-flex justify-center items-center p-0.5 text-white">
                   <AirpodsIcon />
                 </div>
-                <div style={{ fontSize: "14px", paddingLeft: "4px" }}>
-                  Glanfaloth' AirPods
-                </div>
+                <div className="text-sm pl-1">Glanfaloth' AirPods</div>
               </div>
             </div>
-            <div
-              className="flex hover:bg-gray-300"
-              style={{
-                justifyContent: "space-between",
-                padding: "2px 10px 2px 10px",
-                borderRadius: "4px",
-                marginTop: "5px"
-              }}
-            >
-              <div
-                className="flex"
-                style={{
-                  alignItems: "center"
-                }}
-              >
-                <div
-                  className="h-6 w-6 bg-gray-400 rounded-full inline-flex justify-center items-center"
-                  style={{ padding: "4px" }}
-                >
+            <div className="flex hover:bg-gray-300 rounded justify-between py-0.5 px-2.5 mt-1">
+              <div className="flex items-center">
+                <div className="h-6 w-6 bg-gray-400 rounded-full inline-flex justify-center items-center p-1">
                   <FaHeadphonesAlt size={20} />
                 </div>
-                <div style={{ fontSize: "14px", paddingLeft: "4px" }}>
-                  Earmuffs
-                </div>
+                <div className="text-sm pl-1">Earmuffs</div>
               </div>
             </div>
-            <div
-              className="flex hover:bg-gray-300"
-              style={{
-                justifyContent: "space-between",
-                padding: "2px 10px 2px 10px",
-                borderRadius: "4px",
-                marginTop: "5px"
-              }}
-            >
-              <div
-                className="flex"
-                style={{
-                  alignItems: "center"
-                }}
-              >
-                <div
-                  className="h-6 w-6 bg-gray-400 rounded-full inline-flex justify-center items-center"
-                  style={{ padding: "4px" }}
-                >
+            <div className="flex hover:bg-gray-300 rounded justify-between py-0.5 px-2.5 mt-1">
+              <div className="flex items-center">
+                <div className="h-6 w-6 bg-gray-400 rounded-full inline-flex justify-center items-center p-1">
                   <FaHeadphonesAlt size={20} />
                 </div>
-                <div style={{ fontSize: "14px", paddingLeft: "4px" }}>
-                  WH-1000XM4
-                </div>
+                <div className="text-sm pl-1">WH-1000XM4</div>
               </div>
             </div>
-            <hr
-              style={{
-                color: "grey",
-                opacity: "0.5",
-                margin: "5px 10px 5px 10px"
-              }}
-            />
+            <hr className="text-gray-500 opacity-50 my-1 mx-2.5" />
           </div>
         )}
-        <div
-          className="flex hover:bg-gray-300"
-          style={{
-            justifyContent: "space-between",
-            padding: "2px 10px 2px 10px",
-            borderRadius: "4px",
-            alignItems: "center"
-          }}
-        >
-          <div
-            className="w-4/5 hover:bg-gray-300"
-            style={{
-              fontSize: "14px"
-            }}
-          >
+        <div className="flex hover:bg-gray-300 justify-between py-0.5 px-2.5 rounded items-center">
+          <div className="w-4/5 hover:bg-gray-300 text-sm">
             Bluetooth Preferences...
           </div>
         </div>
