@@ -10,7 +10,8 @@ import {
   AiOutlineLink,
   AiOutlineSearch,
   AiOutlineClockCircle,
-  AiOutlineDoubleLeft
+  AiOutlineDoubleLeft,
+  AiOutlineMenu
 } from "react-icons/ai";
 import { GoTriangleRight, GoTriangleDown } from "react-icons/go";
 import { BsDot } from "react-icons/bs";
@@ -38,6 +39,7 @@ interface BearState {
   contentID: string;
   contentURL: string;
   midbarList: BearMdData[];
+  showSidebar: boolean;
 }
 
 interface ContentProps extends BearRedux {
@@ -57,6 +59,7 @@ interface SidebarProps {
   items: BearMdData[];
   curr: number; // current child midbar
   setContent: (id: string, url: string, index: number) => void;
+  toggleSidebar: () => void;
 }
 
 const Highlighter = (dark: boolean): any => {
@@ -90,7 +93,11 @@ class Sidebar extends Component<SidebarProps> {
     return (
       <div className="sidebar w-full h-full bg-white text-white overflow-y-scroll">
         <div className="flex justify-end">
-          <AiOutlineDoubleLeft className="text-gray-500 m-2" size={20} />
+          <AiOutlineDoubleLeft
+            className="cursor-pointer text-gray-500 m-2"
+            size={20}
+            onClick={this.props.toggleSidebar}
+          ></AiOutlineDoubleLeft>
         </div>
         <div className="h-8 pl-3 pr-3 flex flex-row justify-start items-center">
           <Emoji label="peach" symbol="🍑" />
@@ -155,12 +162,12 @@ class Sidebar extends Component<SidebarProps> {
                           >
                             <BsDot className="ml-5 mr-2 text-gray-800" />
                             {item.icon}
-                            {item.title}
+                            <div className="text-sm">{item.title}</div>
                           </div>
                           <div style={{ width: "10px" }}>
                             {item.link && (
                               <a
-                                style={{ float: "right", paddingRight: "5px" }}
+                                className="float-right pr-2"
                                 href={item.link}
                                 target="_blank"
                                 rel="noreferrer"
@@ -265,7 +272,8 @@ class Bear extends Component<BearRedux, BearState> {
       curMidbar: 0,
       midbarList: bear[0].md,
       contentURL: bear[0].md[0].file,
-      contentID: bear[0].md[0].id
+      contentID: bear[0].md[0].id,
+      showSidebar: true
     };
   }
 
@@ -287,17 +295,34 @@ class Bear extends Component<BearRedux, BearState> {
     });
   };
 
+  toggleSidebar = () => {
+    this.setState({
+      showSidebar: !this.state.showSidebar
+    });
+  };
+
   render() {
     return (
       <div className="bear font-avenir flex flex-row w-full h-full">
         <div className="flex-none">
-          <Sidebar
-            cur={this.state.curSidebar}
-            setMidBar={this.setMidBar}
-            items={this.state.midbarList}
-            curr={this.state.curMidbar}
-            setContent={this.setContent}
-          />
+          {this.state.showSidebar ? (
+            <Sidebar
+              cur={this.state.curSidebar}
+              setMidBar={this.setMidBar}
+              items={this.state.midbarList}
+              curr={this.state.curMidbar}
+              setContent={this.setContent}
+              toggleSidebar={this.toggleSidebar}
+            />
+          ) : (
+            <div>
+              <AiOutlineMenu
+                className="cursor-pointer text-gray-500 m-2"
+                size={20}
+                onClick={this.toggleSidebar}
+              />
+            </div>
+          )}
         </div>
         <div className="flex-grow">
           <Content

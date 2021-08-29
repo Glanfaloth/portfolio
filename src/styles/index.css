@@ -153,7 +153,7 @@ body:not(pre) {
   @apply hidden;
 }
 
-/* --------- bear markdown --------- */
+/* --------- notion markdown --------- */
 
 .bear .markdown a {
   @apply text-gray-500;
@@ -297,6 +297,14 @@ body:not(pre) {
 
 .dark .bear .sidebar {
   @apply bg-gray-700 text-white;
+}
+
+.bear .tooltip {
+  @apply invisible absolute;
+}
+
+.bear .has-tooltip:hover .tooltip {
+  @apply visible z-50;
 }
 
 /*

@@ -63,7 +63,7 @@ class BlueToothMenu extends Component<BlueToothMenuProps, {}> {
         }}
         ref={this.blueToothRef}
       >
-        <div className="flex" style={{ paddingLeft: "10px" }}>
+        <div className="flex pl-2.5">
           <div className="w-4/5 font-medium">Bluetooth</div>
           <div className="w-1/5 text-center">
             <label className="switch-toggle">
