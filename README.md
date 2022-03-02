@@ -9,7 +9,7 @@ Powered by [React](https://reactjs.org/) + [React Redux](https://react-redux.js.
 - WiFi menu
 - Bluetooth menu
 
-## Usage
+<!-- ## Usage
 
 ```bash
 yarn install
@@ -19,7 +19,9 @@ yarn dev
 
 # build for production with minification to the `build` folder
 yarn build
-```
+
+"homepage": "https://glanfaloth.github.io/playground-macos",
+``` -->
 
 ## Credits
 
