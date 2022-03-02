@@ -41,4 +41,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: build
-          cname: glanfaloth.github.io
+          cname: glanfaloth.github.io/portfolio

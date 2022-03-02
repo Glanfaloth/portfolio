@@ -2,7 +2,6 @@
   "name": "playground-macos",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://glanfaloth.github.io/playground-macos",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
