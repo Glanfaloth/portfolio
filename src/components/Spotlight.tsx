@@ -21,10 +21,9 @@ const getRandom = (min: number, max: number): number => {
 const getRandomDate = (): string => {
   const timeStamp = new Date().getTime();
   const randomStamp = getRandom(0, timeStamp);
-  const date = format(randomStamp, "MM/dd/yyyy");
+  const date = format(randomStamp, "MM.dd.yyyy");
   return date;
 };
-
 interface SpotlightProps {
   toggleSpotlight: () => void;
   openApp: (id: string) => void;
@@ -129,7 +128,7 @@ export default function Spotlight({
         <li
           id={`spotlight-${app.id}`}
           key={`spotlight-${app.id}`}
-          className={`pl-4 h-7 w-full pr-1 flex flex-row ${bg} ${text} cursor-default`}
+          className={`pl-2 h-7 pr-1 flex flex-row ${bg} ${text} cursor-default px-2.5 rounded`}
           data-app-type={type}
           onClick={() => handleClick(app.id)}
           onDoubleClick={() => handleDoubleClick(app.id)}
@@ -168,7 +167,7 @@ export default function Spotlight({
       <div>
         {app.appList.length !== 0 && (
           <div>
-            <div className="pl-6 py-0.5 text-xs leading-none bg-gray-400 bg-opacity-80 flex items-center text-black">
+            <div className="pl-4 py-1 text-xs leading-none bg-opacity-80 flex items-center text-gray-500 text-opacity-50">
               Applications
             </div>
             <ul className="w-full text-xs">{app.appList}</ul>
@@ -176,7 +175,7 @@ export default function Spotlight({
         )}
         {portfolio.appList.length !== 0 && (
           <div>
-            <div className="pl-6 py-0.5 text-xs leading-none bg-gray-400 bg-opacity-80 flex items-center text-black">
+            <div className="pl-4 py-2 text-xs leading-none bg-opacity-80 flex items-center text-gray-500 text-opacity-50 border-t border-gray-400 border-opacity-50 mt-1">
               Portfolio
             </div>
             <ul className="w-full text-xs">{portfolio.appList}</ul>
@@ -289,7 +288,7 @@ export default function Spotlight({
           className="bg-transparent flex flex-row border-t border-gray-400 border-opacity-50"
           style={{ height: "341px" }}
         >
-          <div className="flex-none w-32 sm:w-72 border-r border-gray-400 border-opacity-50 overflow-y-scroll">
+          <div className="flex-none w-32 sm:w-72 border-r border-gray-400 border-opacity-50 overflow-y-scroll items-center justify-center p-2">
             {appList}
           </div>
           <div className="flex-grow">
@@ -321,7 +320,7 @@ export default function Spotlight({
                     <div>
                       {curDetails.type === "app" ? "Application" : "Portfolio"}
                     </div>
-                    <div>{`${getRandom(0, 999)} G`}</div>
+                    <div>{`${getRandom(0, 999)} MB`}</div>
                     <div>{getRandomDate()}</div>
                     <div>{getRandomDate()}</div>
                     <div>{getRandomDate()}</div>

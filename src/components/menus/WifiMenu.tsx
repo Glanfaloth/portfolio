@@ -100,7 +100,7 @@ class WifiMenu extends Component<WifiMenuProps, {}> {
                 <BsLockFill className="mr-0.5 h-2.5 text-gray-500" />
               </div>
             </div>
-            <div className="flex hover:bg-gray-300rounded justify-between py-0.5 px-2.5 mt-1">
+            <div className="flex hover:bg-gray-300 rounded justify-between py-0.5 px-2.5 mt-1">
               <div className="flex items-center">
                 <div className="h-6 w-6 bg-gray-400 rounded-full inline-flex justify-center items-center p-0.5">
                   <FiWifi size={20} />
