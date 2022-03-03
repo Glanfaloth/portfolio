@@ -15,6 +15,7 @@ const placeholderText = "Search";
 export default function Launchpad({ show, toggleLaunchpad }: LaunchpadProps) {
   const dark = useSelector((state: RootReduxState) => state.dark);
   const [searchText, setSearchText] = useState("");
+  const [isSearching, setIsSearch] = useState(false);
 
   const search = () => {
     if (searchText === "") return launchpadApps;
@@ -32,6 +33,10 @@ export default function Launchpad({ show, toggleLaunchpad }: LaunchpadProps) {
     ? ""
     : "opacity-0 invisible transition-opacity duration-200";
 
+  const searchingStyle = isSearching
+    ? ["col-start-1", "text-left"]
+    : ["col-start-1", "text-center"];
+
   return (
     <div
       className={`nightwind-prevent-block ${close} z-30 transform scale-110 w-full h-full fixed overflow-hidden bg-center bg-cover`}
@@ -46,14 +51,18 @@ export default function Launchpad({ show, toggleLaunchpad }: LaunchpadProps) {
           className="block mx-auto grid grid-cols-11 h-7 w-64 mt-5 rounded-md bg-gray-200 bg-opacity-10 border border-gray-200 border-opacity-30"
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="col-start-1 col-span-1 flex justify-center items-center">
+          <div
+            className={`${searchingStyle[0]} col-span-1 flex justify-center items-center`}
+          >
             <BiSearch className="ml-1" color="white" />
           </div>
           <input
-            className="col-start-2 col-span-10 outline-none focus:outline-none bg-transparent px-1 text-sm text-white"
+            className={`${searchingStyle[1]} col-span-10 outline-none focus:outline-none bg-transparent px-1 text-sm text-white placeholder-gray-100 placeholder-opacity-50`}
             placeholder={placeholderText}
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
+            onFocus={() => setIsSearch(true)}
+            onBlur={() => setIsSearch(false)}
           />
         </div>
 
