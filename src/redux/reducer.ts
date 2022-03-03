@@ -1,6 +1,7 @@
+import { RootReduxState } from "../types";
 import { type } from "./action";
 
-const initState = {
+const initState: RootReduxState = {
   dark: false,
   volume: 100,
   brightness: 80,

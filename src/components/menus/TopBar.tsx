@@ -2,7 +2,7 @@ import React, { Component, createRef, forwardRef } from "react";
 import { connect } from "react-redux";
 import format from "date-fns/format";
 
-import { macActions } from "../../types";
+import { MacActions } from "../../types";
 import AppleMenu from "./AppleMenu";
 import WifiMenu from "./WifiMenu";
 import BlueToothMenu from "./BlueToothMenu";
@@ -48,7 +48,7 @@ interface TopBarRedux {
   bluetooth: boolean;
 }
 
-interface TopBarProps extends macActions, TopBarRedux {
+interface TopBarProps extends MacActions, TopBarRedux {
   title: string;
   setVolume: Function;
   toggleFullScreen: Function;

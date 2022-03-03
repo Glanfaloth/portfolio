@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { ImCancelCircle } from "react-icons/im";
 
-import { macActions } from "../types";
+import { MacActions } from "../types";
 import wallpapers from "../configs/wallpapers";
 import user from "../configs/user";
 
@@ -10,7 +10,7 @@ type LoginRedux = {
   dark?: boolean;
 };
 
-type LoginProps = LoginRedux & macActions;
+type LoginProps = LoginRedux & MacActions;
 
 class Login extends Component<LoginProps, {}> {
   keyPress = (e: React.KeyboardEvent) => {

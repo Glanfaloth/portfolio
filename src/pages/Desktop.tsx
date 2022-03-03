@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import nightwind from "nightwind/helper";
 
-import { macActions } from "../types";
+import { MacActions } from "../types";
 import TopBar from "../components/menus/TopBar";
 import Dock from "../components/dock/Dock";
 import Launchpad from "../components/Launchpad";
@@ -16,7 +16,7 @@ type DesktopRedux = {
   brightness?: number;
 };
 
-type DesktopProps = DesktopRedux & macActions;
+type DesktopProps = DesktopRedux & MacActions;
 
 interface DesktopState {
   showApps: {
