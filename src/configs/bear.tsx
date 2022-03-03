@@ -1,4 +1,4 @@
-import { BearData } from "../types";
+import type { BearData } from "../types";
 
 function Emoji(props: any) {
   return (

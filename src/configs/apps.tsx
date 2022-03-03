@@ -3,7 +3,7 @@ import Safari from "../components/apps/Safari";
 import Bear from "../components/apps/Bear";
 import VSCode from "../components/apps/VSCode";
 
-import { AppsData } from "../types";
+import type { AppsData } from "../types";
 
 const apps: AppsData[] = [
   {

@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { BiSearch } from "react-icons/bi";
-import launchpadApps from "../configs/launchpad";
-import wallpapers from "../configs/wallpapers";
+import { launchpadApps, wallpapers } from "../configs";
 import type { RootReduxState } from "../types";
 
 interface LaunchpadProps {

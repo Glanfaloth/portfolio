@@ -5,8 +5,7 @@ import { CgSleep } from "react-icons/cg";
 import { RiShutDownLine, RiRestartLine } from "react-icons/ri";
 
 import type { MacActions, RootReduxState } from "../types";
-import wallpapers from "../configs/wallpapers";
-import user from "../configs/user";
+import { wallpapers, user } from "../configs";
 
 export default function Login(props: MacActions) {
   const dark = useSelector((state: RootReduxState) => state.dark);

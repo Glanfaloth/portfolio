@@ -9,7 +9,7 @@ import BlueToothMenu from "./BlueToothMenu";
 import ControlCenterMenu from "./ControlCenterMenu";
 import { isFullScreen } from "../../utils/screen";
 import { setVolume, setBrightness, toggleFullScreen } from "../../redux/action";
-import music from "../../configs/music";
+import { music } from "../../configs";
 
 // ------- import icons -------
 import { BsBatteryFull } from "react-icons/bs";

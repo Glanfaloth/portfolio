@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { useMotionValue } from "framer-motion";
-import apps from "../../configs/apps";
+import { apps } from "../../configs";
 import DockItem from "./DockItem";
 
 interface DockRedux {

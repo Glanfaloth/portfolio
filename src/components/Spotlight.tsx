@@ -2,8 +2,7 @@ import React, { createRef, useState, useEffect } from "react";
 import type { RefObject } from "react";
 import format from "date-fns/format";
 import { BiSearch } from "react-icons/bi";
-import apps from "../configs/apps";
-import launchpadApps from "../configs/launchpad";
+import { apps, launchpadApps } from "../configs";
 import type { LaunchpadData, AppsData } from "../types";
 import { useClickOutside } from "../hooks";
 
