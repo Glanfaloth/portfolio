@@ -270,18 +270,28 @@ export default function Spotlight({
       onClick={focusOnInput}
       ref={spotlightRef}
     >
-      <div className="w-full grid grid-cols-8 sm:grid-cols-11 h-12 sm:h-14 rounded-md bg-transparent">
-        <div className="col-start-1 col-span-1 flex justify-center items-center">
-          <BiSearch className="ml-1 text-gray-600" size={28} />
+      <div className="w-full h-12 sm:h-14 rounded-md bg-transparent flex flex-row justify-between items-center">
+        <div className="flex flex-row">
+          <div className="ml-4 flex justify-center items-center">
+            <BiSearch className="ml-1 text-gray-600" size={28} />
+          </div>
+          <input
+            id="spotlight-input"
+            className="col-start-2 col-span-7 sm:col-span-10 outline-none focus:outline-none bg-transparent px-1 text-black text-xl sm:text-2xl"
+            placeholder="Spotlight Search"
+            value={searchText}
+            onChange={handleInputChange}
+            autoFocus={true}
+          />
         </div>
-        <input
-          id="spotlight-input"
-          className="col-start-2 col-span-7 sm:col-span-10 outline-none focus:outline-none bg-transparent px-1 text-black text-xl sm:text-2xl"
-          placeholder="Spotlight Search"
-          value={searchText}
-          onChange={handleInputChange}
-          autoFocus={true}
-        />
+        {curDetails && (
+          <img
+            className="w-8 mr-4"
+            src={curDetails.img}
+            alt={curDetails.title}
+            title={curDetails.title}
+          />
+        )}
       </div>
       {searchText !== "" && (
         <div
