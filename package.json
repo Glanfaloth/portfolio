@@ -2,14 +2,15 @@
   "name": "playground-macos",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://glanfaloth.github.io/playground-macos",
   "scripts": {
+    "build": "craco build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "dev": "craco start",
-    "build": "craco build",
-    "test": "craco test",
     "eject": "react-scripts eject",
-    "lint": "eslint --ext .js,.ts,.tsx ./"
+    "lint": "eslint --ext .js,.ts,.tsx ./",
+    "test": "craco test"
   },
   "husky": {
     "hooks": {
