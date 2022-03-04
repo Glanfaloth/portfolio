@@ -2,11 +2,7 @@ import { useSelector } from "react-redux";
 import { useMotionValue } from "framer-motion";
 import { apps } from "../../configs";
 import DockItem from "./DockItem";
-
-interface DockRedux {
-  dockSize?: number;
-  dockMag?: number;
-}
+import type { RootReduxState } from "../../types";
 
 interface DockProps {
   open: (id: string) => void;
@@ -25,8 +21,10 @@ export default function Dock({
   toggleLaunchpad,
   hide
 }: DockProps) {
-  const dockSize = useSelector((state: DockRedux) => state.dockSize);
-  const dockMag = useSelector((state: DockRedux) => state.dockMag);
+  const { dockSize, dockMag } = useSelector((state: RootReduxState) => ({
+    dockSize: state.dockSize,
+    dockMag: state.dockMag
+  }));
 
   const openApp = (id: string) => {
     if (id === "launchpad") toggleLaunchpad(!showLaunchpad);
