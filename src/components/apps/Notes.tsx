@@ -4,9 +4,7 @@ import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { GiSettingsKnobs } from "react-icons/gi";
 import { AiOutlineLink } from "react-icons/ai";
-import { IoCloudOfflineOutline } from "react-icons/io5";
 import notes from "../../configs/notes";
 import type { NotesMdData, RootReduxState } from "../../types";
 
@@ -85,7 +83,13 @@ const Sidebar = ({ cur, setMidBar }: SidebarProps) => {
                 {item.title}
               </span>
             </div>
-            {item.md.length}
+            <div
+              className={`flex flex-row items-center ${
+                cur === index ? "text-white" : ""
+              }`}
+            >
+              {item.md.length}
+            </div>
           </li>
         ))}
       </ul>
@@ -108,10 +112,9 @@ const Middlebar = ({ items, cur, setContent }: MiddlebarProps) => {
             onClick={() => setContent(item.id, item.file, index)}
           >
             <div className="h-8 mt-3 flex flex-row flex-none items-center">
-              <div className="-mt-1 w-10 text-gray-500 flex flex-none justify-center">
-                {item.icon}
-              </div>
+              <div className="-mt-1 w-5 text-gray-500 flex flex-none justify-center"></div>
               <span className="relative text-gray-900 flex-grow font-bold">
+                {item.icon} {}
                 {item.title}
                 {item.link && (
                   <a
@@ -125,7 +128,7 @@ const Middlebar = ({ items, cur, setContent }: MiddlebarProps) => {
                 )}
               </span>
             </div>
-            <div className="h-16 ml-10 pb-2 pr-1 border-b border-gray-300 text-sm text-gray-500">
+            <div className="h-16 ml-5 pb-2 pr-1 border-b border-gray-300 text-sm text-gray-500">
               {item.excerpt}
             </div>
           </li>
