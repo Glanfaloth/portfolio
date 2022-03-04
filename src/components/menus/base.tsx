@@ -13,7 +13,7 @@ const MenuItem = (props: MenuItemProps) => {
   return (
     <li
       onClick={props.onClick}
-      className="px-5 leading-6 text-black cursor-default hover:bg-blue-500 hover:text-white"
+      className="px-3 leading-6 text-black cursor-default hover:bg-blue-500 hover:text-white mx-1 rounded-md"
     >
       {props.children}
     </li>
@@ -22,7 +22,7 @@ const MenuItem = (props: MenuItemProps) => {
 
 const MenuItemGroup = (props: MenuItemGroupProps) => {
   return (
-    <ul className="py-1">
+    <ul className="my-0.5">
       {props.children}
       {props.border === true && (
         <hr className="text-gray-500 opacity-50 my-1 mx-2.5" />
