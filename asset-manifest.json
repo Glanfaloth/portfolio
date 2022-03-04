@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/playground-macos/static/css/main.dce80551.chunk.css",
-    "main.js": "/playground-macos/static/js/main.00504247.chunk.js",
-    "main.js.map": "/playground-macos/static/js/main.00504247.chunk.js.map",
-    "runtime-main.js": "/playground-macos/static/js/runtime-main.44215910.js",
-    "runtime-main.js.map": "/playground-macos/static/js/runtime-main.44215910.js.map",
-    "static/css/2.8a61496e.chunk.css": "/playground-macos/static/css/2.8a61496e.chunk.css",
-    "static/js/2.a3851655.chunk.js": "/playground-macos/static/js/2.a3851655.chunk.js",
-    "static/js/2.a3851655.chunk.js.map": "/playground-macos/static/js/2.a3851655.chunk.js.map",
-    "index.html": "/playground-macos/index.html",
-    "static/css/2.8a61496e.chunk.css.map": "/playground-macos/static/css/2.8a61496e.chunk.css.map",
-    "static/css/main.dce80551.chunk.css.map": "/playground-macos/static/css/main.dce80551.chunk.css.map",
-    "static/js/2.a3851655.chunk.js.LICENSE.txt": "/playground-macos/static/js/2.a3851655.chunk.js.LICENSE.txt",
-    "static/media/font.css": "/playground-macos/static/media/AvenirNextLTPro-Regular.a6f907b6.woff"
+    "main.css": "/portfolio/static/css/main.5a325276.chunk.css",
+    "main.js": "/portfolio/static/js/main.2f5e7956.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.2f5e7956.chunk.js.map",
+    "runtime-main.js": "/portfolio/static/js/runtime-main.bf545497.js",
+    "runtime-main.js.map": "/portfolio/static/js/runtime-main.bf545497.js.map",
+    "static/css/2.8a61496e.chunk.css": "/portfolio/static/css/2.8a61496e.chunk.css",
+    "static/js/2.b96fad43.chunk.js": "/portfolio/static/js/2.b96fad43.chunk.js",
+    "static/js/2.b96fad43.chunk.js.map": "/portfolio/static/js/2.b96fad43.chunk.js.map",
+    "index.html": "/portfolio/index.html",
+    "static/css/2.8a61496e.chunk.css.map": "/portfolio/static/css/2.8a61496e.chunk.css.map",
+    "static/css/main.5a325276.chunk.css.map": "/portfolio/static/css/main.5a325276.chunk.css.map",
+    "static/js/2.b96fad43.chunk.js.LICENSE.txt": "/portfolio/static/js/2.b96fad43.chunk.js.LICENSE.txt",
+    "static/media/font.css": "/portfolio/static/media/AvenirNextLTPro-Regular.a6f907b6.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.44215910.js",
+    "static/js/runtime-main.bf545497.js",
     "static/css/2.8a61496e.chunk.css",
-    "static/js/2.a3851655.chunk.js",
-    "static/css/main.dce80551.chunk.css",
-    "static/js/main.00504247.chunk.js"
+    "static/js/2.b96fad43.chunk.js",
+    "static/css/main.5a325276.chunk.css",
+    "static/js/main.2f5e7956.chunk.js"
   ]
 }
