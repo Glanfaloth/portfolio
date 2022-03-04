@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import terminal from "../../configs/terminal";
-import { TerminalData } from "../../types";
+import { terminal } from "../../configs";
+import type { TerminalData } from "../../types";
 
 interface TerminalState {
   content: JSX.Element[];
