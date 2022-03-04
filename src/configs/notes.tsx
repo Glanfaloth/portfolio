@@ -1,4 +1,4 @@
-import type { BearData } from "../types";
+import type { NotesData } from "../types";
 
 function Emoji(props: any) {
   return (
@@ -13,7 +13,7 @@ function Emoji(props: any) {
   );
 }
 
-const bear: BearData[] = [
+const notes: NotesData[] = [
   {
     id: "profile",
     title: "Profile",
@@ -69,4 +69,4 @@ const bear: BearData[] = [
   }
 ];
 
-export default bear;
+export default notes;

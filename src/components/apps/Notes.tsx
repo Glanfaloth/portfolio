@@ -7,8 +7,8 @@ import { dracula, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { GiSettingsKnobs } from "react-icons/gi";
 import { AiOutlineLink } from "react-icons/ai";
 import { IoCloudOfflineOutline } from "react-icons/io5";
-import bear from "../../configs/bear";
-import type { BearMdData, RootReduxState } from "../../types";
+import notes from "../../configs/notes";
+import type { NotesMdData, RootReduxState } from "../../types";
 
 interface ContentProps {
   contentID: string;
@@ -16,20 +16,20 @@ interface ContentProps {
 }
 
 interface MiddlebarProps {
-  items: BearMdData[];
+  items: NotesMdData[];
   cur: number;
   setContent: (id: string, url: string, index: number) => void;
 }
 
 interface SidebarProps {
   cur: number;
-  setMidBar: (items: BearMdData[], index: number) => void;
+  setMidBar: (items: NotesMdData[], index: number) => void;
 }
 
-interface BearState extends ContentProps {
+interface NotesState extends ContentProps {
   curSidebar: number;
   curMidbar: number;
-  midbarList: BearMdData[];
+  midbarList: NotesMdData[];
 }
 
 const Highlighter = (dark: boolean): any => {
@@ -66,9 +66,9 @@ const Sidebar = ({ cur, setMidBar }: SidebarProps) => {
         <GiSettingsKnobs size={20} />
       </div>
       <ul>
-        {bear.map((item, index) => (
+        {notes.map((item, index) => (
           <li
-            key={`bear-sidebar-${item.id}`}
+            key={`notes-sidebar-${item.id}`}
             className={`pl-6 h-8 flex flex-row items-center cursor-default ${
               cur === index ? "bg-red-500" : "bg-transparent"
             } ${cur === index ? "" : "hover:bg-gray-600"}`}
@@ -87,9 +87,9 @@ const Middlebar = ({ items, cur, setContent }: MiddlebarProps) => {
   return (
     <div className="midbar w-full h-full bg-gray-50 border-r border-gray-300 overflow-y-scroll">
       <ul>
-        {items.map((item: BearMdData, index: number) => (
+        {items.map((item: NotesMdData, index: number) => (
           <li
-            key={`bear-midbar-${item.id}`}
+            key={`notes-midbar-${item.id}`}
             className={`h-24 flex flex-col cursor-default border-l-2 ${
               cur === index
                 ? "border-red-500 bg-white"
@@ -188,16 +188,16 @@ const Content = ({ contentID, contentURL }: ContentProps) => {
   );
 };
 
-const Bear = () => {
-  const [state, setState] = useState<BearState>({
+const Notes = () => {
+  const [state, setState] = useState<NotesState>({
     curSidebar: 0,
     curMidbar: 0,
-    midbarList: bear[0].md,
-    contentID: bear[0].md[0].id,
-    contentURL: bear[0].md[0].file
+    midbarList: notes[0].md,
+    contentID: notes[0].md[0].id,
+    contentURL: notes[0].md[0].file
   });
 
-  const setMidBar = (items: BearMdData[], index: number) => {
+  const setMidBar = (items: NotesMdData[], index: number) => {
     setState({
       curSidebar: index,
       curMidbar: 0,
@@ -217,7 +217,7 @@ const Bear = () => {
   };
 
   return (
-    <div className="bear font-avenir flex flex-row w-full h-full">
+    <div className="notes font-avenir flex flex-row w-full h-full">
       <div className="flex-none w-44">
         <Sidebar cur={state.curSidebar} setMidBar={setMidBar} />
       </div>
@@ -235,4 +235,4 @@ const Bear = () => {
   );
 };
 
-export default Bear;
+export default Notes;

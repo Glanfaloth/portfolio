@@ -1,4 +1,4 @@
-export interface BearMdData {
+export interface NotesMdData {
   id: string;
   title: string;
   file: string;
@@ -7,9 +7,9 @@ export interface BearMdData {
   link?: string;
 }
 
-export interface BearData {
+export interface NotesData {
   id: string;
   title: string;
   icon: JSX.Element;
-  md: BearMdData[];
+  md: NotesMdData[];
 }

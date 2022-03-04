@@ -1,6 +1,6 @@
 import Terminal from "../components/apps/Terminal";
 import Safari from "../components/apps/Safari";
-import Bear from "../components/apps/Bear";
+import Notes from "../components/apps/Notes";
 import VSCode from "../components/apps/VSCode";
 
 import type { AppsData } from "../types";
@@ -31,7 +31,7 @@ const apps: AppsData[] = [
     width: 1000,
     height: 600,
     img: "img/icons/notes.png",
-    content: <Bear />
+    content: <Notes />
   },
   {
     id: "vscode",

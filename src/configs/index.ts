@@ -1,5 +1,5 @@
 import apps from "./apps";
-import bear from "./bear";
+import notes from "./notes";
 import launchpadApps from "./launchpad";
 import music from "./music";
 import terminal from "./terminal";
@@ -9,7 +9,7 @@ import websites from "./websites";
 
 export {
   apps,
-  bear,
+  notes,
   launchpadApps,
   music,
   terminal,

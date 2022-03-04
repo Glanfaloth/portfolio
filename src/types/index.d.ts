@@ -21,8 +21,8 @@ export interface RootReduxState {
 
 export {
   AppsData,
-  BearMdData,
-  BearData,
+  NotesMdData,
+  NotesData,
   LaunchpadData,
   MusicData,
   TerminalData,
