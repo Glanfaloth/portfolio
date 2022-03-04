@@ -42,6 +42,7 @@ const TopBarItem = forwardRef((props: TopBarItemProps, ref: any) => {
     </div>
   );
 });
+TopBarItem.displayName = "TopBarItem";
 
 const CCMIcon = ({ size }: { size: number }) => {
   return (

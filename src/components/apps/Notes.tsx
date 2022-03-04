@@ -48,9 +48,10 @@ const Highlighter = (dark: boolean): any => {
           style={dark ? dracula : prism}
           language={match[1]}
           PreTag="div"
-          children={String(children).replace(/\n$/, "")}
           {...props}
-        />
+        >
+          {String(children).replace(/\n$/, "")}
+        </SyntaxHighlighter>
       ) : (
         <code className={className}>{children}</code>
       );
@@ -178,11 +179,12 @@ const Content = ({ contentID, contentURL }: ContentProps) => {
     <div className="markdown w-full h-full bg-gray-50 text-gray-700 overflow-scroll py-6">
       <div className="w-2/3 px-2 mx-auto">
         <ReactMarkdown
-          children={storeMd[contentID]}
           linkTarget="_blank"
           remarkPlugins={[gfm]}
           components={Highlighter(dark as boolean)}
-        />
+        >
+          {storeMd[contentID]}
+        </ReactMarkdown>
       </div>
     </div>
   );
