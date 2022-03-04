@@ -5,13 +5,13 @@ export default function Battery() {
   const batteryState = useBattery();
 
   const width = (): number => {
-    return 0.1 + batteryState.level * 0.95;
+    return 0.1 + batteryState.level * 0.96;
   };
 
   const color = (): string => {
     if (batteryState.charging) return "bg-green-500";
 
-    if (batteryState.level < 0.2) return "bg-red-500";
+    if (batteryState.level < 0.2) return "bg-red-400";
     else if (batteryState.level < 0.5) return "bg-yellow-500";
     else return "bg-white";
   };

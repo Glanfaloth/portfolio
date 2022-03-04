@@ -2,27 +2,20 @@
   "name": "playground-macos",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://glanfaloth.github.io/playground-macos",
   "scripts": {
     "build": "craco build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "dev": "DISABLE_ESLINT_PLUGIN=true craco start",
+    "dev": "craco start",
     "eject": "react-scripts eject",
+    "postinstall": "husky install",
     "lint": "eslint --ext .js,.ts,.tsx ./",
     "test": "craco test"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
-    "*.{js}": [
-      "eslint --ext .js,.ts,.tsx ./"
-    ],
-    "package.json": [
-      "sort-package-json"
-    ]
+    "*.{js,ts,tsx}": "eslint --fix",
+    "package.json": "sort-package-json"
   },
   "browserslist": {
     "production": [
@@ -88,8 +81,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^9",
-    "husky": "^4.3.8",
-    "lint-staged": "^12.1.2",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.6",
     "postcss": "^7",
     "sort-package-json": "^1.53.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
