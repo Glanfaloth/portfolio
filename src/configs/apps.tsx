@@ -24,13 +24,13 @@ const apps: AppsData[] = [
     content: <Safari />
   },
   {
-    id: "notion",
-    title: "Notion",
+    id: "notes",
+    title: "Notes",
     desktop: true,
     show: true,
     width: 1000,
     height: 600,
-    img: "img/icons/notion.png",
+    img: "img/icons/notes.png",
     content: <Bear />
   },
   {

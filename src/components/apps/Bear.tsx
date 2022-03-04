@@ -1,65 +1,35 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import { useState, useEffect, useCallback } from "react";
+import { useSelector } from "react-redux";
 import ReactMarkdown from "react-markdown";
 import gfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula, prism } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { GiSettingsKnobs } from "react-icons/gi";
+import { AiOutlineLink } from "react-icons/ai";
+import { IoCloudOfflineOutline } from "react-icons/io5";
 import bear from "../../configs/bear";
-import { BearMdData } from "../../types";
-import {
-  AiOutlineLink,
-  AiOutlineSearch,
-  AiOutlineClockCircle,
-  AiOutlineDoubleLeft,
-  AiOutlineMenu
-} from "react-icons/ai";
-import { GoTriangleRight, GoTriangleDown } from "react-icons/go";
-import { BsDot } from "react-icons/bs";
+import type { BearMdData, RootReduxState } from "../../types";
 
-function Emoji(props: any) {
-  return (
-    <span
-      className="emoji"
-      role="img"
-      aria-label={props.label ? props.label : ""}
-      aria-hidden={props.label ? "false" : "true"}
-    >
-      {props.symbol}
-    </span>
-  );
-}
-
-interface BearRedux {
-  dark?: boolean;
-}
-
-interface BearState {
-  curSidebar: number;
-  curMidbar: number;
+interface ContentProps {
   contentID: string;
   contentURL: string;
-  midbarList: BearMdData[];
-  showSidebar: boolean;
 }
 
-interface ContentProps extends BearRedux {
-  id: string;
-  url: string;
-}
-
-interface ContentState {
-  storeMd: {
-    [key: string]: string;
-  };
+interface MiddlebarProps {
+  items: BearMdData[];
+  cur: number;
+  setContent: (id: string, url: string, index: number) => void;
 }
 
 interface SidebarProps {
-  cur: number; // current parent sidebar
+  cur: number;
   setMidBar: (items: BearMdData[], index: number) => void;
-  items: BearMdData[];
-  curr: number; // current child midbar
-  setContent: (id: string, url: string, index: number) => void;
-  toggleSidebar: () => void;
+}
+
+interface BearState extends ContentProps {
+  curSidebar: number;
+  curMidbar: number;
+  midbarList: BearMdData[];
 }
 
 const Highlighter = (dark: boolean): any => {
@@ -88,258 +58,181 @@ const Highlighter = (dark: boolean): any => {
   };
 };
 
-class Sidebar extends Component<SidebarProps> {
-  render() {
-    return (
-      <div className="sidebar w-full h-full bg-white text-white overflow-y-scroll">
-        <div className="flex justify-end">
-          <AiOutlineDoubleLeft
-            className="cursor-pointer text-gray-500 m-2"
-            size={20}
-            onClick={this.props.toggleSidebar}
-          ></AiOutlineDoubleLeft>
-        </div>
-        <div className="h-8 pl-3 pr-3 flex flex-row justify-start items-center">
-          <Emoji label="peach" symbol="🍑" />
-          <p className="text-sm ml-1">Lanlan</p>
-        </div>
-        <div className="pl-3 pr-3 h-8 flex flex-row justify-start items-center">
-          <AiOutlineSearch className="text-gray-500 mr-2" />
-          <p className="text-gray-500 text-sm">Quick Find</p>
-        </div>
-        <div className="pl-3 pr-3 h-8 flex flex-row justify-start items-center">
-          <AiOutlineClockCircle className="text-gray-500 mr-2" />
-          <p className="text-gray-500 text-sm">All Updates</p>
-        </div>
-        <div className="pl-3 pr-3 h-8 flex flex-row justify-start items-center">
-          <AiOutlineSearch className="text-gray-500 mr-2" />
-          <p className="text-gray-500 text-sm">Settings &amp; Members</p>
-        </div>
-        <div className="pl-3 pr-3 h-8 flex flex-row justify-start items-center">
-          <p className="text-gray-400 text-xs">FAVORITES</p>
-        </div>
-        <ul>
-          {bear.map((item, index) => (
-            <li
-              key={`bear-sidebar-${item.id}`}
-              className={`flex flex-col items-left cursor-default ${
-                this.props.cur === index ? "bg-gray-500" : "bg-transparent"
-              } ${this.props.cur === index ? "" : "hover:bg-gray-200"}`}
-            >
-              <div
-                className="h-8 pl-3 flex flex-row items-center"
-                onClick={() => this.props.setMidBar(item.md, index)}
-              >
-                {this.props.cur === index ? (
-                  <GoTriangleDown className="text-gray-800 mr-2" />
-                ) : (
-                  <GoTriangleRight className="text-gray-800 mr-2" />
-                )}
-                {item.icon}
-                <span className="ml-2 text-sm">{item.title}</span>
-              </div>
-              {this.props.cur === index && (
-                <div className="midbar w-full h-full bg-gray-200">
-                  <ul>
-                    {this.props.items.map((item: BearMdData, index: number) => (
-                      <li
-                        key={`bear-midbar-${item.id}`}
-                        className={`h-8 flex flex-col cursor-default ${
-                          this.props.curr === index
-                            ? "bg-gray-400"
-                            : "bg-transparent"
-                        } ${
-                          this.props.curr === index ? "" : "hover:bg-gray-300"
-                        }`}
-                        onClick={() =>
-                          this.props.setContent(item.id, item.file, index)
-                        }
-                      >
-                        <div className="flex flex-row items-center content-between">
-                          <div
-                            className="mt-1 mr-2 flex flex-row flex-none items-center"
-                            style={{ width: "200px" }}
-                          >
-                            <BsDot className="ml-5 mr-2 text-gray-800" />
-                            {item.icon}
-                            <div className="text-sm">{item.title}</div>
-                          </div>
-                          <div style={{ width: "10px" }}>
-                            {item.link && (
-                              <a
-                                className="float-right pr-2"
-                                href={item.link}
-                                target="_blank"
-                                rel="noreferrer"
-                              >
-                                <AiOutlineLink className="text-gray-500" />
-                              </a>
-                            )}
-                          </div>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </li>
-          ))}
-        </ul>
+const Sidebar = ({ cur, setMidBar }: SidebarProps) => {
+  return (
+    <div className="sidebar w-full h-full bg-gray-700 text-white overflow-y-scroll">
+      <div className="h-12 pr-3 flex flex-row justify-end items-center">
+        <IoCloudOfflineOutline className="mr-3" size={20} />
+        <GiSettingsKnobs size={20} />
       </div>
-    );
-  }
-}
-
-class Content extends Component<ContentProps, ContentState> {
-  constructor(props: ContentProps) {
-    super(props);
-    this.state = {
-      storeMd: {}
-    };
-  }
-
-  componentDidMount() {
-    this.fetchMarkdown(this.props.id, this.props.url);
-  }
-
-  componentDidUpdate(prevProps: ContentProps) {
-    if (prevProps.url !== this.props.url) {
-      this.fetchMarkdown(this.props.id, this.props.url);
-    }
-  }
-
-  fetchMarkdown(id: string, url: string) {
-    let storeMd = this.state.storeMd;
-    if (!storeMd[id]) {
-      fetch(url)
-        .then((response) => response.text())
-        .then((text) => {
-          text = this.fixImageURL(text, url);
-          storeMd[id] = text;
-          this.setState({ storeMd });
-        })
-        .catch((error) => console.error(error));
-    }
-  }
-
-  getRepoURL(url: string) {
-    return url.slice(0, -10) + "/";
-  }
-
-  fixImageURL(text: string, mdURL: string): string {
-    text = text.replace(/&nbsp;/g, "");
-    if (mdURL.indexOf("raw.githubusercontent.com") !== -1) {
-      const repoURL = this.getRepoURL(mdURL);
-
-      const imgReg = /!\[(.*?)\]\((.*?)\)/;
-      const imgRegGlobal = /!\[(.*?)\]\((.*?)\)/g;
-
-      const imgList = text.match(imgRegGlobal);
-
-      if (imgList) {
-        for (let img of imgList) {
-          const imgURL = (img.match(imgReg) as Array<string>)[2];
-          if (imgURL.indexOf("http") !== -1) continue;
-          const newImgURL = repoURL + imgURL;
-          text = text.replace(imgURL, newImgURL);
-        }
-      }
-    }
-    return text;
-  }
-
-  render() {
-    return (
-      <div className="markdown w-full h-full bg-gray-50 text-gray-700 overflow-scroll py-6">
-        <div className="w-2/3 px-2 mx-auto">
-          <ReactMarkdown
-            children={this.state.storeMd[this.props.id]}
-            linkTarget="_blank"
-            remarkPlugins={[gfm]}
-            components={Highlighter(this.props.dark as boolean)}
-          />
-        </div>
-      </div>
-    );
-  }
-}
-
-class Bear extends Component<BearRedux, BearState> {
-  constructor(props: BearRedux) {
-    super(props);
-    this.state = {
-      curSidebar: 0,
-      curMidbar: 0,
-      midbarList: bear[0].md,
-      contentURL: bear[0].md[0].file,
-      contentID: bear[0].md[0].id,
-      showSidebar: true
-    };
-  }
-
-  setMidBar = (items: BearMdData[], index: number) => {
-    this.setState({
-      midbarList: items,
-      curSidebar: index,
-      contentURL: items[0].file,
-      contentID: items[0].id,
-      curMidbar: 0
-    });
-  };
-
-  setContent = (id: string, url: string, index: number) => {
-    this.setState({
-      contentID: id,
-      contentURL: url,
-      curMidbar: index
-    });
-  };
-
-  toggleSidebar = () => {
-    this.setState({
-      showSidebar: !this.state.showSidebar
-    });
-  };
-
-  render() {
-    return (
-      <div className="bear font-avenir flex flex-row w-full h-full">
-        <div className="flex-none">
-          {this.state.showSidebar ? (
-            <Sidebar
-              cur={this.state.curSidebar}
-              setMidBar={this.setMidBar}
-              items={this.state.midbarList}
-              curr={this.state.curMidbar}
-              setContent={this.setContent}
-              toggleSidebar={this.toggleSidebar}
-            />
-          ) : (
-            <div>
-              <AiOutlineMenu
-                className="cursor-pointer text-gray-500 m-2"
-                size={20}
-                onClick={this.toggleSidebar}
-              />
-            </div>
-          )}
-        </div>
-        <div className="flex-grow">
-          <Content
-            id={this.state.contentID}
-            url={this.state.contentURL}
-            dark={this.props.dark}
-          />
-        </div>
-      </div>
-    );
-  }
-}
-
-const mapStateToProps = (state: BearRedux): BearRedux => {
-  return {
-    dark: state.dark
-  };
+      <ul>
+        {bear.map((item, index) => (
+          <li
+            key={`bear-sidebar-${item.id}`}
+            className={`pl-6 h-8 flex flex-row items-center cursor-default ${
+              cur === index ? "bg-red-500" : "bg-transparent"
+            } ${cur === index ? "" : "hover:bg-gray-600"}`}
+            onClick={() => setMidBar(item.md, index)}
+          >
+            {item.icon}
+            <span className="ml-2">{item.title}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 };
 
-export default connect(mapStateToProps, null)(Bear);
+const Middlebar = ({ items, cur, setContent }: MiddlebarProps) => {
+  return (
+    <div className="midbar w-full h-full bg-gray-50 border-r border-gray-300 overflow-y-scroll">
+      <ul>
+        {items.map((item: BearMdData, index: number) => (
+          <li
+            key={`bear-midbar-${item.id}`}
+            className={`h-24 flex flex-col cursor-default border-l-2 ${
+              cur === index
+                ? "border-red-500 bg-white"
+                : "border-transparent bg-transparent"
+            } hover:bg-white`}
+            onClick={() => setContent(item.id, item.file, index)}
+          >
+            <div className="h-8 mt-3 flex flex-row flex-none items-center">
+              <div className="-mt-1 w-10 text-gray-500 flex flex-none justify-center">
+                {item.icon}
+              </div>
+              <span className="relative text-gray-900 flex-grow font-bold">
+                {item.title}
+                {item.link && (
+                  <a
+                    className="absolute top-1 right-4"
+                    href={item.link}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <AiOutlineLink className="text-gray-500" />
+                  </a>
+                )}
+              </span>
+            </div>
+            <div className="h-16 ml-10 pb-2 pr-1 border-b border-gray-300 text-sm text-gray-500">
+              {item.excerpt}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+const getRepoURL = (url: string) => {
+  return url.slice(0, -10) + "/";
+};
+
+const fixImageURL = (text: string, contentURL: string): string => {
+  text = text.replace(/&nbsp;/g, "");
+  if (contentURL.indexOf("raw.githubusercontent.com") !== -1) {
+    const repoURL = getRepoURL(contentURL);
+
+    const imgReg = /!\[(.*?)\]\((.*?)\)/;
+    const imgRegGlobal = /!\[(.*?)\]\((.*?)\)/g;
+
+    const imgList = text.match(imgRegGlobal);
+
+    if (imgList) {
+      for (let img of imgList) {
+        const imgURL = (img.match(imgReg) as Array<string>)[2];
+        if (imgURL.indexOf("http") !== -1) continue;
+        const newImgURL = repoURL + imgURL;
+        text = text.replace(imgURL, newImgURL);
+      }
+    }
+  }
+  return text;
+};
+
+const Content = ({ contentID, contentURL }: ContentProps) => {
+  const [storeMd, setStoreMd] = useState<{ [key: string]: string }>({});
+  const dark = useSelector((state: RootReduxState) => state.dark);
+
+  const fetchMarkdown = useCallback(
+    (id: string, url: string) => {
+      if (!storeMd[id]) {
+        fetch(url)
+          .then((response) => response.text())
+          .then((text) => {
+            storeMd[id] = fixImageURL(text, url);
+            setStoreMd({ ...storeMd });
+          })
+          .catch((error) => console.error(error));
+      }
+    },
+    [storeMd]
+  );
+
+  useEffect(() => {
+    fetchMarkdown(contentID, contentURL);
+  }, [contentID, contentURL, fetchMarkdown]);
+
+  return (
+    <div className="markdown w-full h-full bg-gray-50 text-gray-700 overflow-scroll py-6">
+      <div className="w-2/3 px-2 mx-auto">
+        <ReactMarkdown
+          children={storeMd[contentID]}
+          linkTarget="_blank"
+          remarkPlugins={[gfm]}
+          components={Highlighter(dark as boolean)}
+        />
+      </div>
+    </div>
+  );
+};
+
+const Bear = () => {
+  const [state, setState] = useState<BearState>({
+    curSidebar: 0,
+    curMidbar: 0,
+    midbarList: bear[0].md,
+    contentID: bear[0].md[0].id,
+    contentURL: bear[0].md[0].file
+  });
+
+  const setMidBar = (items: BearMdData[], index: number) => {
+    setState({
+      curSidebar: index,
+      curMidbar: 0,
+      midbarList: items,
+      contentID: items[0].id,
+      contentURL: items[0].file
+    });
+  };
+
+  const setContent = (id: string, url: string, index: number) => {
+    setState({
+      ...state,
+      curMidbar: index,
+      contentID: id,
+      contentURL: url
+    });
+  };
+
+  return (
+    <div className="bear font-avenir flex flex-row w-full h-full">
+      <div className="flex-none w-44">
+        <Sidebar cur={state.curSidebar} setMidBar={setMidBar} />
+      </div>
+      <div className="flex-none w-60">
+        <Middlebar
+          items={state.midbarList}
+          cur={state.curMidbar}
+          setContent={setContent}
+        />
+      </div>
+      <div className="flex-grow">
+        <Content contentID={state.contentID} contentURL={state.contentURL} />
+      </div>
+    </div>
+  );
+};
+
+export default Bear;

@@ -153,7 +153,7 @@ body:not(pre) {
   @apply hidden;
 }
 
-/* --------- notion markdown --------- */
+/* --------- notes markdown --------- */
 
 .bear .markdown a {
   @apply text-gray-500;
