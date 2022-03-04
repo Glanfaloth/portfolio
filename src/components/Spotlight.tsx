@@ -1,8 +1,8 @@
-import React, { createRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import type { RefObject } from "react";
 import format from "date-fns/format";
 import { BiSearch } from "react-icons/bi";
-import { apps, launchpadApps } from "../configs";
+import { apps, launchpadApps, user } from "../configs";
 import type { LaunchpadData, AppsData } from "../types";
 import { useClickOutside } from "../hooks";
 
@@ -36,7 +36,7 @@ export default function Spotlight({
   toggleLaunchpad,
   btnRef
 }: SpotlightProps) {
-  const spotlightRef = createRef<HTMLDivElement>();
+  const spotlightRef = useRef<HTMLDivElement>(null);
 
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const [clickedID, setClickedID] = useState("");
