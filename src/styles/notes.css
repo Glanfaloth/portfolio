@@ -150,16 +150,12 @@
   @apply bg-gray-900;
 }
 
-.dark .notes .sidebar {
-  @apply bg-gray-700 text-white;
-}
-
 .notes .sidebar {
-  @apply bg-gray-200 text-black;
+  @apply bg-gray-200 text-black bg-opacity-70 blur text-sm;
 }
 
 .dark .notes .sidebar {
-  @apply bg-gray-700 text-white;
+  @apply bg-gray-700 text-white bg-opacity-70 blur text-sm;
 }
 
 .notes .tooltip {

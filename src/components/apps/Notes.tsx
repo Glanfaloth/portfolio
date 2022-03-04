@@ -61,22 +61,31 @@ const Highlighter = (dark: boolean): any => {
 
 const Sidebar = ({ cur, setMidBar }: SidebarProps) => {
   return (
-    <div className="sidebar w-full h-full bg-gray-700 text-white overflow-y-scroll">
-      <div className="h-12 pr-3 flex flex-row justify-end items-center">
-        <IoCloudOfflineOutline className="mr-3" size={20} />
-        <GiSettingsKnobs size={20} />
-      </div>
+    <div className="sidebar w-full h-full overflow-y-scroll">
+      <div className="h-10 pl-3 flex flex-row items-center">iCloud</div>
       <ul>
         {notes.map((item, index) => (
           <li
             key={`notes-sidebar-${item.id}`}
-            className={`pl-6 h-8 flex flex-row items-center cursor-default ${
-              cur === index ? "bg-red-500" : "bg-transparent"
-            } ${cur === index ? "" : "hover:bg-gray-600"}`}
+            className={`mx-2 px-3 h-8 flex flex-row items-center justify-between cursor-default rounded-md ${
+              cur === index ? "bg-blue-500" : "bg-transparent"
+            }`}
             onClick={() => setMidBar(item.md, index)}
           >
-            {item.icon}
-            <span className="ml-2">{item.title}</span>
+            <div className="flex flex-row items-center">
+              <div
+                className={`flex flex-row items-center ${
+                  cur === index ? "text-white" : "text-blue-500"
+                }`}
+              >
+                {item.icon}
+              </div>
+
+              <span className={`ml-2 ${cur === index ? "text-white" : ""}`}>
+                {item.title}
+              </span>
+            </div>
+            {item.md.length}
           </li>
         ))}
       </ul>

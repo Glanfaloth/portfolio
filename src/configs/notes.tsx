@@ -1,5 +1,5 @@
 import type { NotesData } from "../types";
-
+import { BsFolder2 } from "react-icons/bs";
 function Emoji(props: any) {
   return (
     <span
@@ -17,7 +17,7 @@ const notes: NotesData[] = [
   {
     id: "profile",
     title: "Profile",
-    icon: <Emoji label="waving" symbol="👋" />,
+    icon: <BsFolder2 />,
     md: [
       {
         id: "about-me",
@@ -38,7 +38,7 @@ const notes: NotesData[] = [
   {
     id: "project",
     title: "Projects",
-    icon: <Emoji label="file" symbol="📂" />,
+    icon: <BsFolder2 />,
     md: [
       {
         id: "grimmetropolis",
