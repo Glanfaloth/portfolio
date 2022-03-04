@@ -1,4 +1,4 @@
-# playground-macos
+# portfolio
 
 This project is developed based on the amazing [portfolio website](https://portfolio.zxh.io) of [Xiaohan Zou](https://github.com/Renovamen).
 
@@ -20,7 +20,7 @@ yarn dev
 # build for production with minification to the `build` folder
 yarn build
 
-"homepage": "https://glanfaloth.github.io/playground-macos",
+"homepage": "https://glanfaloth.github.io/portfolio",
 ``` -->
 
 ## Credits

@@ -1,8 +1,8 @@
 {
-  "name": "playground-macos",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://glanfaloth.github.io/playground-macos",
+  "homepage": "https://glanfaloth.github.io/portfolio",
   "scripts": {
     "build": "craco build",
     "predeploy": "npm run build",
