@@ -34,6 +34,14 @@ const notes: NotesData[] = [
     icon: <BsFolder2 />,
     md: [
       {
+        id: "papillon",
+        title: "Papillon",
+        file: "https://raw.githubusercontent.com/Glanfaloth/papillon/main/README.md",
+        icon: <Emoji label="butterfly" symbol="🦋" />,
+        excerpt: "Multiplayer language learning platforms",
+        link: "https://github.com/Glanfaloth/papillon"
+      },
+      {
         id: "grimmetropolis",
         title: "Grimmetropolis",
         file: "https://raw.githubusercontent.com/Glanfaloth/Grimmetropolis/master/README.md",
@@ -44,10 +52,10 @@ const notes: NotesData[] = [
       {
         id: "fitfit",
         title: "FITFIT",
-        file: "https://raw.githubusercontent.com/arcgt/HackZurich2020/master/README.md",
+        file: "https://raw.githubusercontent.com/Glanfaloth/FITFIT/master/README.md",
         icon: <Emoji label="superhero" symbol="🦸" />,
         excerpt: "AR App for learning a new language while doing exercise",
-        link: "https://github.com/arcgt/HackZurich2020"
+        link: "https://github.com/Glanfaloth/FITFIT"
       },
       {
         id: "yangtao",
@@ -63,8 +71,7 @@ const notes: NotesData[] = [
         title: "3D Vision",
         file: "https://raw.githubusercontent.com/Glanfaloth/3D-Tracking-MVS/master/README.md",
         icon: <Emoji label="soccer" symbol="⚽" />,
-        excerpt:
-          "3D Player Tracking with Multi-View Stream (FIFA)",
+        excerpt: "3D Player Tracking with Multi-View Stream (FIFA)",
         link: "https://github.com/Glanfaloth/3D-Tracking-MVS"
       }
     ]

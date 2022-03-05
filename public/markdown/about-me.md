@@ -28,4 +28,4 @@ My GitHub stats (powered by [github-readme-stats](https://github.com/anuraghazra
 
 ## Credits
 
-This site is based on Xiaohan Zou's [playground-macos](https://github.com/Renovamen/playground-macos), source code hosted [here](https://github.com/Glanfaloth/portfolio).
+This site is based on Xiaohan Zou's [playground-macos](https://github.com/Renovamen/playground-macos), developed with React + TypeScript, React Redux and Tailwind CSS. Source code is hosted [here](https://github.com/Glanfaloth/portfolio).

@@ -1,7 +1,12 @@
 import type { LaunchpadData } from "../types";
-import{ SiFifa } from "react-icons/si";
 
 const launchpadApps: LaunchpadData[] = [
+  {
+    id: "papillon",
+    title: "Papillon",
+    img: "img/icons/launchpad/papillon.png",
+    link: "https://github.com/Glanfaloth/papillon"
+  },
   {
     id: "grimmetropolis",
     title: "Grimmetropolis",
@@ -12,7 +17,7 @@ const launchpadApps: LaunchpadData[] = [
     id: "fitfit",
     title: "FITFIT",
     img: "img/icons/launchpad/fitfit.png",
-    link: "https://github.com/arcgt/HackZurich2020"
+    link: "https://github.com/Glanfaloth/FITFIT"
   },
   {
     id: "yangtao",
