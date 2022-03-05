@@ -60,36 +60,28 @@ const Highlighter = (dark: boolean): any => {
 const Sidebar = ({ cur, setMidBar }: SidebarProps) => {
   return (
     <div className="sidebar w-full h-full overflow-y-scroll">
-      <div className="h-10 pl-3 flex flex-row items-center">iCloud</div>
+      <div className="h-8 pl-3 flex flex-row items-center text-xs">iCloud</div>
       <ul>
         {notes.map((item, index) => (
           <li
             key={`notes-sidebar-${item.id}`}
             className={`mx-2 px-3 h-8 flex flex-row items-center justify-between cursor-default rounded-md ${
-              cur === index ? "bg-blue-500" : "bg-transparent"
+              cur === index ? "bg-blue-400" : "bg-transparent"
             }`}
             onClick={() => setMidBar(item.md, index)}
           >
             <div className="flex flex-row items-center">
               <div
                 className={`flex flex-row items-center ${
-                  cur === index ? "text-white" : "text-blue-500"
+                  cur === index ? "" : "text-blue-400"
                 }`}
               >
                 {item.icon}
               </div>
 
-              <span className={`ml-2 ${cur === index ? "text-white" : ""}`}>
-                {item.title}
-              </span>
+              <span className={`ml-2`}>{item.title}</span>
             </div>
-            <div
-              className={`flex flex-row items-center ${
-                cur === index ? "text-white" : ""
-              }`}
-            >
-              {item.md.length}
-            </div>
+            <div className={`flex flex-row items-center`}>{item.md.length}</div>
           </li>
         ))}
       </ul>
@@ -104,18 +96,16 @@ const Middlebar = ({ items, cur, setContent }: MiddlebarProps) => {
         {items.map((item: NotesMdData, index: number) => (
           <li
             key={`notes-midbar-${item.id}`}
-            className={`h-24 flex flex-col cursor-default border-l-2 ${
-              cur === index
-                ? "border-red-500 bg-white"
-                : "border-transparent bg-transparent"
-            } hover:bg-white`}
+            className={`mx-2 h-24 flex flex-col cursor-default rounded-md ${
+              cur === index ? "bg-blue-400" : "bg-transparent"
+            }`}
             onClick={() => setContent(item.id, item.file, index)}
           >
-            <div className="h-8 mt-3 flex flex-row flex-none items-center">
-              <div className="-mt-1 w-5 text-gray-500 flex flex-none justify-center"></div>
-              <span className="relative text-gray-900 flex-grow font-bold">
-                {item.icon} {}
+            <div className="h-8 mt-3 flex flex-row flex-none items-center text-black">
+              <span className="ml-5 relative flex-grow font-bold">
                 {item.title}
+                {"  "}
+                {item.icon}
                 {item.link && (
                   <a
                     className="absolute top-1 right-4"
@@ -128,7 +118,11 @@ const Middlebar = ({ items, cur, setContent }: MiddlebarProps) => {
                 )}
               </span>
             </div>
-            <div className="h-16 ml-5 pb-2 pr-1 border-b border-gray-300 text-sm text-gray-500">
+            <div
+              className={`h-16 ml-5 pb-2 pr-1 ${
+                cur === index ? "" : "border-b border-gray-300"
+              } text-sm text-black`}
+            >
               {item.excerpt}
             </div>
           </li>
@@ -189,7 +183,7 @@ const Content = ({ contentID, contentURL }: ContentProps) => {
 
   return (
     <div className="markdown w-full h-full bg-gray-50 text-gray-700 overflow-scroll py-6">
-      <div className="w-2/3 px-2 mx-auto">
+      <div className="w-4/5 px-2 mx-auto">
         <ReactMarkdown
           linkTarget="_blank"
           remarkPlugins={[gfm]}

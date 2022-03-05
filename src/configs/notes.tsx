@@ -26,13 +26,6 @@ const notes: NotesData[] = [
         icon: <Emoji label="waving" symbol="👋" />,
         excerpt: "Hi! This is Lanlan, now a master's student at..."
       },
-      {
-        id: "about-site",
-        title: "About This Site",
-        file: "markdown/about-site.md",
-        icon: <Emoji label="globe" symbol="🌐" />,
-        excerpt: "Something about this personal portfolio site..."
-      }
     ]
   },
   {

@@ -28,24 +28,12 @@
   @apply text-3xl;
 }
 
-.notes .markdown h1::before {
-  content: "H1";
-}
-
 .notes .markdown h2 {
   @apply text-2xl;
 }
 
-.notes .markdown h2::before {
-  content: "H2";
-}
-
 .notes .markdown h3 {
   @apply text-xl;
-}
-
-.notes .markdown h3::before {
-  content: "H3";
 }
 
 .notes .markdown h3 {
@@ -54,10 +42,6 @@
 
 .notes .markdown h4 {
   @apply text-lg;
-}
-
-.notes .markdown h4::before {
-  content: "H4";
 }
 
 .notes .markdown p {
@@ -72,15 +56,16 @@
 
 .notes .markdown ul,
 .notes .markdown ol {
-  @apply mt-2 pl-5;
-}
-
-.notes .markdown ul {
-  @apply list-disc;
+  @apply mt-2 pl-3;
 }
 
 .notes .markdown ul > li::marker {
   @apply text-red-500;
+}
+
+.notes .markdown ul > li::before {
+  content: "-";
+  @apply mr-2;
 }
 
 .notes .markdown ol {
@@ -146,16 +131,12 @@
   @apply bg-gray-900;
 }
 
-.dark .notes .midbar li:hover {
-  @apply bg-gray-900;
-}
-
 .notes .sidebar {
-  @apply bg-gray-200 text-black bg-opacity-70 blur text-sm;
+  @apply bg-gray-200 text-black bg-opacity-90 blur text-sm;
 }
 
 .dark .notes .sidebar {
-  @apply bg-gray-700 text-white bg-opacity-70 blur text-sm;
+  @apply bg-gray-700 text-white bg-opacity-80 blur text-sm;
 }
 
 .notes .tooltip {
