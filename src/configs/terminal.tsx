@@ -33,6 +33,13 @@ const terminal: TerminalData[] = [
           "Web Development, Mobile Development, UI/UX Design, Computer Vision, Machine Learning"
       },
       {
+        id: "about-hobbies",
+        title: "hobbies.txt",
+        type: "file",
+        content:
+          "Skiing, digital art, soccer, reading, learning foreign languages"
+      },
+      {
         id: "about-contact",
         title: "contact.txt",
         type: "file",
