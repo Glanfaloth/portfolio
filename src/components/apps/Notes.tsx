@@ -121,7 +121,7 @@ const Middlebar = ({ items, cur, setContent }: MiddlebarProps) => {
             <div
               className={`h-16 ml-5 pb-2 pr-1 ${
                 cur === index ? "" : "border-b border-gray-300"
-              } text-sm text-black`}
+              } text-xs text-black`}
             >
               {item.excerpt}
             </div>

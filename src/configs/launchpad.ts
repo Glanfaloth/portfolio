@@ -1,4 +1,5 @@
 import type { LaunchpadData } from "../types";
+import{ SiFifa } from "react-icons/si";
 
 const launchpadApps: LaunchpadData[] = [
   {
@@ -18,6 +19,12 @@ const launchpadApps: LaunchpadData[] = [
     title: "Yangtao",
     img: "img/icons/launchpad/yangtao.png",
     link: "https://github.com/jcklie/iccbc-2019"
+  },
+  {
+    id: "3dv",
+    title: "3D Vision",
+    img: "img/icons/launchpad/fifa.png",
+    link: "https://github.com/Glanfaloth/3D-Tracking-MVS"
   }
 ];
 

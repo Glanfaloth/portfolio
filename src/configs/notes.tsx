@@ -25,7 +25,7 @@ const notes: NotesData[] = [
         file: "markdown/about-me.md",
         icon: <Emoji label="waving" symbol="👋" />,
         excerpt: "Hi! This is Lanlan, now a master's student at..."
-      },
+      }
     ]
   },
   {
@@ -36,10 +36,10 @@ const notes: NotesData[] = [
       {
         id: "grimmetropolis",
         title: "Grimmetropolis",
-        file: "markdown/grimmetropolis.md",
+        file: "https://raw.githubusercontent.com/Glanfaloth/Grimmetropolis/master/README.md",
         icon: <Emoji label="crown" symbol="👑" />,
         excerpt: "Tower Defense game in the theme of Grimm's fairy tales",
-        link: "https://gitlab.inf.ethz.ch/OU-GTC/gamelab2021-team3"
+        link: "https://github.com/Glanfaloth/Grimmetropolis"
       },
       {
         id: "fitfit",
@@ -57,6 +57,15 @@ const notes: NotesData[] = [
         excerpt:
           "AR App for Interactively Learning and Exploring Chinese Characters",
         link: "https://github.com/jcklie/iccbc-2019"
+      },
+      {
+        id: "3dv",
+        title: "3D Vision",
+        file: "https://raw.githubusercontent.com/Glanfaloth/3D-Tracking-MVS/master/README.md",
+        icon: <Emoji label="soccer" symbol="⚽" />,
+        excerpt:
+          "3D Player Tracking with Multi-View Stream (FIFA)",
+        link: "https://github.com/Glanfaloth/3D-Tracking-MVS"
       }
     ]
   }
