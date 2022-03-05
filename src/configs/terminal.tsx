@@ -37,7 +37,7 @@ const terminal: TerminalData[] = [
         title: "hobbies.txt",
         type: "file",
         content:
-          "Skiing, digital art, soccer, reading, learning foreign languages"
+          "Skiing, digital art, playing soccer, reading, solving chess puzzles, learning foreign languages"
       },
       {
         id: "about-contact",
