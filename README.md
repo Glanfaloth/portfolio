@@ -26,8 +26,8 @@ yarn build
 ## Credits
 
 - [https://github.com/Renovamen/playground-macos](https://github.com/Renovamen/playground-macos)
-- [macOS Big Sur](https://www.apple.com/in/macos/big-sur/)
-- [macOS Catalina](https://www.apple.com/bw/macos/catalina/)
+- [macOS Monterey](https://www.apple.com/in/macos/monterey/)
+- [apple design](https://developer.apple.com/design/human-interface-guidelines/macos/visual-design/animation/)
 - [macOS Icon Gallery](https://www.macosicongallery.com/)
 - [sindresorhus/file-icon-cli](https://github.com/sindresorhus/file-icon-cli)
 - [vivek9patel.github.io](https://github.com/vivek9patel/vivek9patel.github.io)

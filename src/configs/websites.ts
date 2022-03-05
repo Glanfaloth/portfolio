@@ -58,10 +58,10 @@ const websites: WebsitesData = {
         link: "https://www.pinterest.com/"
       },
       {
-        id: "bilibili",
-        title: "Bilibili",
-        img: "img/sites/bilibili.svg",
-        link: "https://bilibili.com"
+        id: "hackernews",
+        title: "HN",
+        img: "img/sites/hacker.svg",
+        link: "https://news.ycombinator.com/"
       },
       {
         id: "notion",
@@ -70,10 +70,16 @@ const websites: WebsitesData = {
         link: "https://notion.so"
       },
       {
-        id: "huggingface",
-        title: "HuggingFace",
-        img: "img/sites/huggingface.svg",
-        link: "https://huggingface.co/course/chapter0"
+        id: "adventofcode",
+        title: "AOC",
+        img: "img/sites/adventofcode.svg",
+        link: "https://adventofcode.com/"
+      },
+      {
+        id: "lichess",
+        title: "lichess",
+        img: "img/sites/lichess.svg",
+        link: "https://lichess.org/"
       }
     ]
   }
