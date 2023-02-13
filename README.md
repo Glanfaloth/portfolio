@@ -1,4 +1,4 @@
-# portfolio
+# portfolio - Monterey
 
 This site is based on [Xiaohan Zou](https://github.com/Renovamen)'s [playground-macos](https://github.com/Renovamen/playground-macos), developed with [React](https://reactjs.org/) + [React Redux](https://react-redux.js.org/) + [Tailwind CSS](https://tailwindcss.com/) + [TypeScript](https://www.typescriptlang.org/).
 
