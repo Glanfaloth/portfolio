@@ -1,7 +1,5 @@
 *.log
 .DS_Store
 .cache/
-node_modules
-build
-.npmrc
-.yarnrc
+node_modules/
+dist/
