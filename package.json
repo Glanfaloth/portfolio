@@ -1,9 +1,12 @@
 {
   "name": "playground-macos",
+  "homepage": "https://glanfaloth.github.io/portfolio/",
   "private": true,
   "scripts": {
     "build": "vite build",
     "dev": "vite",
+    "predeploy" : "pnpm build",
+    "deploy" : "gh-pages -d dist",
     "lint": "eslint --ext .js,.ts,.tsx ./",
     "prepare": "husky install",
     "serve": "vite preview",
