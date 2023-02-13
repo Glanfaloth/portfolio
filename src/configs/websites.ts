@@ -80,7 +80,13 @@ const websites: WebsitesData = {
         title: "lichess",
         img: "img/sites/lichess.svg",
         link: "https://lichess.org/"
-      }
+      },
+      {
+        id: "leetcode",
+        title: "LeetCode",
+        img: "img/sites/leetcode.svg",
+        link: "https://leetcode.com/"
+      },
     ]
   }
 };
